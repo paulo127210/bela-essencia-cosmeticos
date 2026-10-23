@@ -31,6 +31,7 @@
         <button type="button" class="botao-barra" data-acao="fonte-menos">A&minus;<span class="visualmente-oculto"> diminuir letra</span></button>
         <button type="button" class="botao-barra" data-acao="fonte-mais">A+<span class="visualmente-oculto"> aumentar letra</span></button>
         <button type="button" class="botao-barra" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" class="botao-barra" data-acao="leitura" aria-pressed="false">Ler ao passar o mouse</button>
         <button type="button" class="botao-barra" id="botao-recursos" data-acao="painel" aria-expanded="false" aria-controls="painel-acessibilidade">Mais recursos de acessibilidade</button>
       </div>
     </div>
@@ -72,6 +73,8 @@
         </fieldset>
         <fieldset class="grupo-recurso" id="grupo-voz">
           <legend>Ouvir a página</legend>
+          <div class="opcao"><input type="checkbox" id="opcao-leitura"><label for="opcao-leitura">Ler em voz alta o que estiver sob o mouse ou selecionado com o Tab</label></div>
+          <p>Indicado para baixa visão. Se você usa leitor de tela, deixe desligado para as vozes não se sobreporem.</p>
           <div class="campo">
             <label for="velocidade-voz">Velocidade da voz</label>
             <select id="velocidade-voz">

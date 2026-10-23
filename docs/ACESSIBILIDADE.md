@@ -48,9 +48,14 @@ Os atalhos são tratados por JavaScript usando o código físico da tecla, entã
 | Espaçamento ampliado | Altura de linha 2, espaço entre letras 0,12 em e entre palavras 0,16 em, conforme o critério 1.4.12. |
 | Fonte facilitada | Troca para a fonte Lexend, de leitura mais fácil para pessoas com dislexia. |
 | Ouvir a página | Usa a Web Speech API em português do Brasil. Lê o texto selecionado ou o conteúdo principal, com pausar, continuar, parar e quatro velocidades. |
+| Ler ao passar o mouse | Desligado por padrão. Quando ligado, lê em voz alta o item sob o mouse (após 0,35 segundo parado) e o item que recebe o foco pelo Tab. Diz o tipo do elemento ("Link", "Botão", "Título", "Imagem", "Campo") e marca o item lido com contorno tracejado. Indicado para baixa visão. |
 | Restaurar | Volta tudo ao padrão. |
 
 As escolhas ficam no `localStorage` do navegador, com tratamento de erro para navegação privada. O arquivo `js/preferencias.js` aplica as escolhas antes de a página aparecer, sem piscar. Se a pessoa nunca escolheu um tema, o site segue o sistema: `prefers-contrast: more` ativa o alto contraste e `prefers-color-scheme: dark` ativa o modo escuro. O modo de cores forçadas do Windows também é respeitado.
+
+## Por que a leitura ao passar o mouse fica desligada
+
+Pessoas cegas não usam o mouse. Elas navegam pelo teclado ou pelo toque com um leitor de tela (NVDA, JAWS, VoiceOver, TalkBack), que já fala todo o conteúdo do site. Se a leitura ao passar o mouse ficasse sempre ligada, a voz do site e a voz do leitor de tela falariam ao mesmo tempo. Por isso ela é uma opção, com botão no topo de todas as páginas, voltada para quem tem baixa visão e usa o mouse.
 
 ## Leitores de tela
 

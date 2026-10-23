@@ -70,6 +70,10 @@
     var dalt = document.getElementById("opcao-daltonismo");
     if (dalt) { dalt.value = raiz.getAttribute("data-daltonismo") || ""; }
     document.querySelectorAll(".estado-fonte").forEach(function (el) { el.textContent = tamanhoAtual() + "%"; });
+    var lendo = raiz.getAttribute("data-leitura") === "sim";
+    document.querySelectorAll("[data-acao='leitura']").forEach(function (b) { b.setAttribute("aria-pressed", lendo ? "true" : "false"); });
+    var opLeitura = document.getElementById("opcao-leitura");
+    if (opLeitura) { opLeitura.checked = lendo; }
   }
 
   /* ---------- Atalhos de teclado (eMAG) ---------- */
@@ -223,9 +227,12 @@
         voz.ativo = false;
         estadoVoz("Leitura interrompida.");
         break;
+      case "leitura":
+        alternarLeitura(raiz.getAttribute("data-leitura") !== "sim");
+        break;
       case "restaurar":
         try { window.localStorage.removeItem(CHAVE); } catch (err) { /* sem armazenamento */ }
-        ["tema", "fonte", "espacamento", "dislexia", "daltonismo"].forEach(function (c) { raiz.removeAttribute("data-" + c); });
+        ["tema", "fonte", "espacamento", "dislexia", "daltonismo", "leitura"].forEach(function (c) { raiz.removeAttribute("data-" + c); });
         salvarPrefs({ temaEscolhido: true });
         atualizarEstados();
         BE.anunciar("Configurações de acessibilidade restauradas para o padrão.");
@@ -245,11 +252,122 @@
     } else if (t.id === "opcao-dislexia") {
       definir("dislexia", t.checked ? "sim" : "");
       BE.anunciar(t.checked ? "Fonte de leitura facilitada ativada." : "Fonte padrão restaurada.");
+    } else if (t.id === "opcao-leitura") {
+      alternarLeitura(t.checked);
     } else if (t.id === "opcao-daltonismo") {
       definir("daltonismo", t.value);
       BE.anunciar(t.value ? "Paleta de cores ajustada." : "Paleta de cores padrão.");
     }
   });
+
+  /* ---------- Leitura ao passar o mouse e ao focar com o Tab ----------
+   * Pensada para pessoas com baixa visão que usam o mouse. Fica desligada
+   * por padrão, porque quem usa leitor de tela já ouve tudo e as duas vozes
+   * se sobreporiam. */
+  var SELETOR_LEITURA = "a, button, label, input, select, textarea, summary, h1, h2, h3, h4, " +
+    "p, li, dt, dd, th, td, legend, img, caption";
+  var leitura = { ultimo: null, espera: null, marcado: null };
+
+  /* Texto visível do elemento, sem as partes marcadas como decorativas (aria-hidden). */
+  function textoLimpo(no) {
+    var copia = no.cloneNode(true);
+    copia.querySelectorAll("[aria-hidden='true']").forEach(function (x) { x.remove(); });
+    copia.querySelectorAll("*").forEach(function (x) {
+      x.insertBefore(document.createTextNode(" "), x.firstChild);
+      x.appendChild(document.createTextNode(" "));
+    });
+    return (copia.textContent || "").replace(/\s+/g, " ").replace(/\s+([:.,;!?])/g, "$1").trim();
+  }
+
+  function nomeDoCampo(campo) {
+    var rotulo = campo.id ? document.querySelector("label[for='" + campo.id + "']") : null;
+    var nome = rotulo ? textoLimpo(rotulo) : (campo.getAttribute("aria-label") || campo.name || "");
+    nome = nome.replace("*", "").trim();
+    if (campo.type === "checkbox" || campo.type === "radio") {
+      return (campo.type === "radio" ? "Opção: " : "Caixa de seleção: ") + nome + (campo.checked ? ", marcada." : ", desmarcada.");
+    }
+    if (campo.tagName === "SELECT") {
+      return "Lista de opções: " + nome + ". Selecionado: " + (campo.options[campo.selectedIndex] || {}).text + ".";
+    }
+    return "Campo: " + nome + ". " + (campo.value ? "Preenchido com: " + campo.value + "." : "Vazio.");
+  }
+
+  function textoDoElemento(alvo) {
+    var tag = alvo.tagName;
+    if (tag === "IMG") { return alvo.alt ? "Imagem: " + alvo.alt : ""; }
+    if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") { return nomeDoCampo(alvo); }
+    if (tag === "LABEL" && alvo.control) { return nomeDoCampo(alvo.control); }
+    var texto = alvo.getAttribute("aria-label") || textoLimpo(alvo);
+    if (!texto) { return ""; }
+    if (texto.length > 400) { texto = texto.slice(0, 400) + "..."; }
+    if (tag === "A") { return "Link: " + texto; }
+    if (tag === "BUTTON") { return "Botão: " + texto + (alvo.getAttribute("aria-pressed") === "true" ? ", ativado." : ""); }
+    if (/^H[1-4]$/.test(tag)) { return "Título: " + texto; }
+    return texto;
+  }
+
+  function marcar(alvo) {
+    if (leitura.marcado) { leitura.marcado.classList.remove("lendo-agora"); }
+    leitura.marcado = alvo;
+    if (alvo) { alvo.classList.add("lendo-agora"); }
+  }
+
+  function falarElemento(alvo) {
+    if (!alvo || alvo === leitura.ultimo) { return; }
+    var texto = textoDoElemento(alvo);
+    if (!texto) { return; }
+    leitura.ultimo = alvo;
+    marcar(alvo);
+    window.speechSynthesis.cancel();
+    var fala = new window.SpeechSynthesisUtterance(texto);
+    fala.lang = "pt-BR";
+    fala.rate = voz.velocidade;
+    var v = vozPortugues();
+    if (v) { fala.voice = v; }
+    window.speechSynthesis.speak(fala);
+  }
+
+  function alvoDeLeitura(no) {
+    if (!no || !no.closest) { return null; }
+    var alvo = no.closest(SELETOR_LEITURA);
+    /* Dentro de um link ou botão, lê o link ou o botão inteiro. */
+    var interativo = no.closest("a, button, label");
+    return interativo || alvo;
+  }
+
+  document.addEventListener("mouseover", function (e) {
+    if (raiz.getAttribute("data-leitura") !== "sim") { return; }
+    var alvo = alvoDeLeitura(e.target);
+    window.clearTimeout(leitura.espera);
+    /* Pequena espera evita leituras ao apenas atravessar a página com o mouse. */
+    leitura.espera = window.setTimeout(function () { falarElemento(alvo); }, 350);
+  });
+
+  document.addEventListener("focusin", function (e) {
+    if (raiz.getAttribute("data-leitura") !== "sim") { return; }
+    window.clearTimeout(leitura.espera);
+    leitura.ultimo = null;
+    falarElemento(alvoDeLeitura(e.target));
+  });
+
+  function alternarLeitura(ligar) {
+    if (ligar && !voz.suportado) {
+      BE.anunciar("Seu navegador não oferece leitura em voz alta. Experimente o Chrome, o Edge ou o Safari.");
+      atualizarEstados();
+      return;
+    }
+    definir("leitura", ligar ? "sim" : "");
+    atualizarEstados();
+    if (voz.suportado) {
+      window.speechSynthesis.cancel();
+      var aviso = new window.SpeechSynthesisUtterance(ligar
+        ? "Leitura ao passar o mouse ativada. Pare o mouse sobre um texto para ouvir."
+        : "Leitura ao passar o mouse desativada.");
+      aviso.lang = "pt-BR";
+      window.speechSynthesis.speak(aviso);
+    }
+    if (!ligar) { marcar(null); leitura.ultimo = null; }
+  }
 
   document.addEventListener("DOMContentLoaded", function () {
     atualizarEstados();

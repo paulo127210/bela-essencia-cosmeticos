@@ -17,7 +17,7 @@ O site é uma loja de demonstração com fins educacionais. O catálogo, o carri
 
 - Conformidade com a WCAG 2.2 nível AA, o eMAG e a Lei Brasileira de Inclusão.
 - Atalhos de teclado do eMAG: Alt+1 conteúdo, Alt+2 menu, Alt+3 busca e Alt+4 rodapé.
-- Barra de acessibilidade com aumento de letra até 200%, alto contraste, modo escuro, paletas para daltonismo, espaçamento ampliado, fonte de leitura facilitada e leitura em voz alta.
+- Barra de acessibilidade com aumento de letra até 200%, alto contraste, modo escuro, paletas para daltonismo, espaçamento ampliado, fonte de leitura facilitada, leitura da página em voz alta e leitura do item sob o mouse ou em foco.
 - Avisos para leitores de tela quando um produto entra no carrinho, quando os filtros mudam e quando há erros no formulário.
 - Fonte Atkinson Hyperlegible, criada para pessoas com baixa visão, hospedada no próprio site.
 
@@ -112,4 +112,5 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: incluída a opção Ler ao passar o mouse, que lê em voz alta o item sob o mouse ou focado pelo Tab.
 - 23/10/2026: primeira versão da loja, com catálogo, carrinho, fechamento do pedido, barra de acessibilidade, documentação e testes automáticos.

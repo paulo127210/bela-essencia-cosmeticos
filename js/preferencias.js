@@ -17,7 +17,8 @@
     fonte: ["125", "150", "175", "200"],
     espacamento: ["sim"],
     dislexia: ["sim"],
-    daltonismo: ["protan", "deutan", "tritan"]
+    daltonismo: ["protan", "deutan", "tritan"],
+    leitura: ["sim"]
   };
   Object.keys(permitidos).forEach(function (chave) {
     var valor = String(prefs[chave] || "");
