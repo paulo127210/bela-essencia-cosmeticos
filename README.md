@@ -112,5 +112,6 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: novas imagens dos produtos, com aparência de foto de estúdio e rótulo da marca, e textos alternativos atualizados.
 - 23/10/2026: incluída a opção Ler ao passar o mouse, que lê em voz alta o item sob o mouse ou focado pelo Tab.
 - 23/10/2026: primeira versão da loja, com catálogo, carrinho, fechamento do pedido, barra de acessibilidade, documentação e testes automáticos.

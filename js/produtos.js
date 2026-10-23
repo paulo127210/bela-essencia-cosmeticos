@@ -31,7 +31,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Vegano", "Livre de crueldade animal"],
     imagem: "img/produtos/batom-cremoso-rose.svg",
-    alt: "Batom em tubo prateado aberto, mostrando a ponta na cor rosa queimado.",
+    alt: "Batom aberto em tubo dourado, com a ponta rosa queimado e a tampa deitada ao lado.",
     forma: "batom", corImagem: "#B5566E"
   },
   {
@@ -48,7 +48,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Vegano"],
     imagem: "img/produtos/batom-matte-vermelho.svg",
-    alt: "Batom em tubo prateado aberto, mostrando a ponta vermelha intensa.",
+    alt: "Batom aberto em tubo dourado, com a ponta vermelha intensa e a tampa deitada ao lado.",
     forma: "batom", corImagem: "#A3162F"
   },
   {
@@ -65,7 +65,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Oftalmologicamente testada"],
     imagem: "img/produtos/mascara-cilios-volume.svg",
-    alt: "Frasco fino de máscara de cílios preto, com a escova curvada ao lado.",
+    alt: "Frasco fino e preto de máscara de cílios, com tampa dourada, e a escova apoiada ao lado.",
     forma: "rimel", corImagem: "#2B2B2B"
   },
   {
@@ -115,7 +115,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Livre de perfume", "Hipoalergênico"],
     imagem: "img/produtos/hidratante-facial-acido-hialuronico.svg",
-    alt: "Pote redondo branco com tampa rosa clara.",
+    alt: "Pote branco largo com tampa rosa serrilhada.",
     forma: "pote", corImagem: "#E9A9BD"
   },
   {
@@ -147,7 +147,7 @@ window.BE.produtos = [
     braille: false,
     selos: ["Hipoalergênico"],
     imagem: "img/produtos/agua-micelar.svg",
-    alt: "Frasco transparente alto com líquido azul claro e tampa rosa.",
+    alt: "Frasco alto azul claro com tampa dourada e rótulo branco.",
     forma: "frasco-alto", corImagem: "#9CC9E8"
   },
   {
@@ -163,7 +163,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Sem sulfato", "Vegano"],
     imagem: "img/produtos/shampoo-reconstrucao.svg",
-    alt: "Frasco vinho de shampoo com tampa dourada.",
+    alt: "Frasco vinho de shampoo com tampa dourada e rótulo branco.",
     forma: "frasco-alto", corImagem: "#7A2348"
   },
   {
@@ -179,7 +179,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Vegano"],
     imagem: "img/produtos/condicionador-reconstrucao.svg",
-    alt: "Frasco rosa de condicionador com tampa dourada voltada para baixo.",
+    alt: "Frasco rosa de condicionador com tampa dourada e rótulo branco.",
     forma: "frasco-alto", corImagem: "#C2557E"
   },
   {
@@ -195,7 +195,7 @@ window.BE.produtos = [
     braille: false,
     selos: ["Vegano"],
     imagem: "img/produtos/oleo-capilar-argan.svg",
-    alt: "Frasco de vidro arredondado com óleo dourado e bomba spray.",
+    alt: "Frasco de vidro dourado com conta-gotas preto e rótulo claro.",
     forma: "contagotas", corImagem: "#C8952C"
   },
   {
@@ -212,7 +212,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Vegano"],
     imagem: "img/produtos/perfume-flor-de-laranjeira.svg",
-    alt: "Frasco de perfume arredondado com líquido laranja claro e tampa em formato de flor.",
+    alt: "Frasco de perfume de vidro grosso com líquido laranja claro e tampa dourada.",
     forma: "perfume", corImagem: "#F0A35E"
   },
   {
@@ -228,7 +228,7 @@ window.BE.produtos = [
     braille: true,
     selos: [],
     imagem: "img/produtos/perfume-noite-de-ambar.svg",
-    alt: "Frasco de perfume facetado com líquido âmbar escuro e tampa dourada quadrada.",
+    alt: "Frasco de perfume de vidro grosso com líquido âmbar escuro e tampa dourada.",
     forma: "perfume", corImagem: "#8A3B12"
   },
   {
@@ -244,7 +244,7 @@ window.BE.produtos = [
     braille: false,
     selos: ["Vegano"],
     imagem: "img/produtos/body-splash-frutas-vermelhas.svg",
-    alt: "Frasco alto rosa avermelhado de body splash com spray branco.",
+    alt: "Frasco alto rosa avermelhado de body splash com tampa dourada.",
     forma: "frasco-alto", corImagem: "#D6456B"
   },
   {
@@ -260,7 +260,7 @@ window.BE.produtos = [
     braille: true,
     selos: ["Vegano"],
     imagem: "img/produtos/hidratante-corporal-karite.svg",
-    alt: "Frasco grande creme com bomba dosadora e rótulo bege.",
+    alt: "Frasco de vidro com loção cor creme, válvula dosadora preta e rótulo branco.",
     forma: "frasco", corImagem: "#E8D5B5"
   },
   {
@@ -276,7 +276,7 @@ window.BE.produtos = [
     braille: false,
     selos: ["Vegano", "Biodegradável"],
     imagem: "img/produtos/sabonete-liquido-lavanda.svg",
-    alt: "Frasco lilás arredondado de sabonete líquido com tampa branca.",
+    alt: "Frasco lilás de sabonete líquido com tampa dourada e rótulo branco.",
     forma: "frasco-alto", corImagem: "#9C7BC8"
   }
 ];

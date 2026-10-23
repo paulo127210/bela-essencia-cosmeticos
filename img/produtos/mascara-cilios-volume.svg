@@ -1,1 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-hidden="true"><defs><radialGradient id="f" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7E4EC"/></radialGradient></defs><rect width="400" height="400" fill="url(#f)"/><ellipse cx="200" cy="350" rx="110" ry="14" fill="#000" opacity=".08"/><rect x="120" y="120" width="44" height="230" rx="20" fill="#2B2B2B"/><rect x="128" y="130" width="8" height="200" rx="4" fill="#fff" opacity=".2"/><rect x="226" y="70" width="14" height="190" rx="6" fill="#B08A57"/><rect x="222" y="250" width="22" height="100" rx="10" fill="#3A3A3A"/><g stroke="#1A1A1A" stroke-width="3"><line x1="220" y1="75" x2="246" y2="75"/><line x1="222" y1="84" x2="244" y2="84"/><line x1="220" y1="93" x2="246" y2="93"/><line x1="222" y1="102" x2="244" y2="102"/><line x1="220" y1="111" x2="246" y2="111"/><line x1="222" y1="120" x2="244" y2="120"/><line x1="220" y1="129" x2="246" y2="129"/><line x1="222" y1="138" x2="244" y2="138"/><line x1="220" y1="147" x2="246" y2="147"/><line x1="222" y1="156" x2="244" y2="156"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-hidden="true"><defs>
+<linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F9EEF3"/><stop offset="1" stop-color="#EED7E1"/>
+</linearGradient>
+<radialGradient id="luz" cx="50%" cy="30%" r="60%">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="sombra" cx="50%" cy="50%" r="50%">
+  <stop offset="0" stop-color="#4A2238" stop-opacity=".35"/><stop offset="1" stop-color="#4A2238" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="ouro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#8C6A2F"/><stop offset=".18" stop-color="#E9D29A"/><stop offset=".35" stop-color="#C9A55A"/>
+  <stop offset=".6" stop-color="#F6E7B8"/><stop offset=".82" stop-color="#B08840"/><stop offset="1" stop-color="#6E5122"/>
+</linearGradient>
+<linearGradient id="prata" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7D838C"/><stop offset=".2" stop-color="#E9EDF2"/><stop offset=".45" stop-color="#AEB5BF"/>
+  <stop offset=".65" stop-color="#F7F9FB"/><stop offset="1" stop-color="#6B717A"/>
+</linearGradient>
+<linearGradient id="preto" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#0E0E10"/><stop offset=".25" stop-color="#4A4A52"/><stop offset=".45" stop-color="#1C1C20"/>
+  <stop offset=".7" stop-color="#3A3A40"/><stop offset="1" stop-color="#08080A"/>
+</linearGradient>
+<linearGradient id="corpo" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#1B1B1B"/><stop offset=".22" stop-color="#606060"/>
+  <stop offset=".5" stop-color="#2B2B2B"/><stop offset=".8" stop-color="#242424"/><stop offset="1" stop-color="#171717"/>
+</linearGradient>
+<linearGradient id="liquido" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#4A4A4A" stop-opacity=".85"/><stop offset="1" stop-color="#202020" stop-opacity=".95"/>
+</linearGradient>
+<linearGradient id="vidro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".12" stop-color="#FFFFFF" stop-opacity=".08"/>
+  <stop offset=".85" stop-color="#FFFFFF" stop-opacity=".05"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".45"/>
+</linearGradient>
+<linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="600" height="600" fill="url(#fundo)"/><ellipse cx="300" cy="230" rx="300" ry="230" fill="url(#luz)"/><rect y="455" width="600" height="145" fill="#EAD0DB" opacity=".35"/><ellipse cx="300" cy="512" rx="140" ry="22" fill="url(#sombra)"/>
+<g transform="translate(360 488) rotate(-8) scale(.85)">
+  <rect x="-15" y="-330" width="30" height="210" rx="12" fill="url(#preto)"/>
+  <rect x="-22" y="-125" width="44" height="125" rx="10" fill="url(#ouro)"/>
+  <rect x="-3" y="-420" width="6" height="95" fill="#8C8C94"/>
+  <g stroke="#111" stroke-width="3" stroke-linecap="round">
+    <line x1="-14" y1="-480" x2="14" y2="-480"/><line x1="-11" y1="-474" x2="11" y2="-474"/><line x1="-14" y1="-468" x2="14" y2="-468"/><line x1="-11" y1="-462" x2="11" y2="-462"/><line x1="-14" y1="-456" x2="14" y2="-456"/><line x1="-11" y1="-450" x2="11" y2="-450"/><line x1="-14" y1="-444" x2="14" y2="-444"/><line x1="-11" y1="-438" x2="11" y2="-438"/><line x1="-14" y1="-432" x2="14" y2="-432"/><line x1="-11" y1="-426" x2="11" y2="-426"/><line x1="-14" y1="-420" x2="14" y2="-420"/>
+  </g>
+  <ellipse cx="0" cy="-450" rx="12" ry="36" fill="#1A1A1E"/>
+</g>
+<rect x="190" y="150" width="78" height="340" rx="36" fill="url(#preto)"/>
+<rect x="190" y="150" width="78" height="96" rx="36" fill="url(#ouro)"/>
+<rect x="190" y="232" width="78" height="14" fill="#000" opacity=".25"/>
+<rect x="202" y="260" width="10" height="210" rx="5" fill="#FFF" opacity=".22"/>
+<g transform="translate(240 370) rotate(-90)" text-anchor="middle" fill="#E9D29A">
+  <text font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" letter-spacing="3" y="-6">BELA ESSÊNCIA</text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="20" y="18">VOLUME TOTAL</text>
+</g>
+</svg>

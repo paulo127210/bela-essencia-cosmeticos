@@ -1,1 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-hidden="true"><defs><radialGradient id="f" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7E4EC"/></radialGradient></defs><rect width="400" height="400" fill="url(#f)"/><ellipse cx="200" cy="350" rx="110" ry="14" fill="#000" opacity=".08"/><rect x="140" y="170" width="120" height="180" rx="22" fill="#C8952C"/><rect x="152" y="185" width="16" height="150" rx="8" fill="#fff" opacity=".3"/><rect x="170" y="140" width="60" height="34" rx="6" fill="#2D2D2D"/><path d="M178 142 Q178 70 200 64 Q222 70 222 142 Z" fill="#1F1F1F"/><rect x="160" y="240" width="80" height="50" rx="6" fill="#fff" opacity=".7"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-hidden="true"><defs>
+<linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F9EEF3"/><stop offset="1" stop-color="#EED7E1"/>
+</linearGradient>
+<radialGradient id="luz" cx="50%" cy="30%" r="60%">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="sombra" cx="50%" cy="50%" r="50%">
+  <stop offset="0" stop-color="#4A2238" stop-opacity=".35"/><stop offset="1" stop-color="#4A2238" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="ouro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#8C6A2F"/><stop offset=".18" stop-color="#E9D29A"/><stop offset=".35" stop-color="#C9A55A"/>
+  <stop offset=".6" stop-color="#F6E7B8"/><stop offset=".82" stop-color="#B08840"/><stop offset="1" stop-color="#6E5122"/>
+</linearGradient>
+<linearGradient id="prata" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7D838C"/><stop offset=".2" stop-color="#E9EDF2"/><stop offset=".45" stop-color="#AEB5BF"/>
+  <stop offset=".65" stop-color="#F7F9FB"/><stop offset="1" stop-color="#6B717A"/>
+</linearGradient>
+<linearGradient id="preto" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#0E0E10"/><stop offset=".25" stop-color="#4A4A52"/><stop offset=".45" stop-color="#1C1C20"/>
+  <stop offset=".7" stop-color="#3A3A40"/><stop offset="1" stop-color="#08080A"/>
+</linearGradient>
+<linearGradient id="corpo" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#82601C"/><stop offset=".22" stop-color="#D5AF60"/>
+  <stop offset=".5" stop-color="#C8952C"/><stop offset=".8" stop-color="#AA7E25"/><stop offset="1" stop-color="#6E5118"/>
+</linearGradient>
+<linearGradient id="liquido" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#D0A44B" stop-opacity=".85"/><stop offset="1" stop-color="#966F21" stop-opacity=".95"/>
+</linearGradient>
+<linearGradient id="vidro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".12" stop-color="#FFFFFF" stop-opacity=".08"/>
+  <stop offset=".85" stop-color="#FFFFFF" stop-opacity=".05"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".45"/>
+</linearGradient>
+<linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="600" height="600" fill="url(#fundo)"/><ellipse cx="300" cy="230" rx="300" ry="230" fill="url(#luz)"/><rect y="455" width="600" height="145" fill="#EAD0DB" opacity=".35"/><ellipse cx="300" cy="512" rx="150" ry="22" fill="url(#sombra)"/>
+<rect x="205" y="250" width="190" height="245" rx="34" fill="url(#corpo)"/>
+<rect x="205" y="250" width="190" height="245" rx="34" fill="url(#vidro)"/>
+<rect x="220" y="270" width="16" height="200" rx="8" fill="#FFF" opacity=".5"/>
+<rect x="236" y="320" width="128" height="120" rx="6" fill="#FFF8F0" opacity=".95"/>
+<g text-anchor="middle" fill="#5C2A47"><text x="300" y="348" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2">BELA ESSÊNCIA</text><line x1="274" y1="358" x2="326" y2="358" stroke="#5C2A47" stroke-width="1" opacity=".6"/><text x="300" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1">ARGAN</text><text x="300" y="410" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14" opacity=".85">óleo capilar</text></g>
+<rect x="250" y="205" width="100" height="50" rx="8" fill="url(#ouro)"/>
+<rect x="250" y="243" width="100" height="10" fill="#000" opacity=".2"/>
+<path d="M262 208 L262 150 Q262 82 300 74 Q338 82 338 150 L338 208 Z" fill="url(#preto)"/>
+<path d="M276 196 L276 150 Q276 108 296 96" stroke="#FFF" stroke-width="6" fill="none" opacity=".25" stroke-linecap="round"/>
+</svg>

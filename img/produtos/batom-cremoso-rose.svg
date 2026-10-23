@@ -1,1 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-hidden="true"><defs><radialGradient id="f" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7E4EC"/></radialGradient></defs><rect width="400" height="400" fill="url(#f)"/><ellipse cx="200" cy="350" rx="110" ry="14" fill="#000" opacity=".08"/><rect x="160" y="210" width="80" height="140" rx="8" fill="#C9CDD3"/><rect x="160" y="210" width="80" height="18" fill="#AEB3BA"/><rect x="172" y="150" width="56" height="62" rx="4" fill="#E2E5E9"/><path d="M178 152 L178 80 Q200 50 222 70 L222 152 Z" fill="#B5566E"/><path d="M184 150 L184 90" stroke="#fff" stroke-width="5" opacity=".35" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-hidden="true"><defs>
+<linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F9EEF3"/><stop offset="1" stop-color="#EED7E1"/>
+</linearGradient>
+<radialGradient id="luz" cx="50%" cy="30%" r="60%">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="sombra" cx="50%" cy="50%" r="50%">
+  <stop offset="0" stop-color="#4A2238" stop-opacity=".35"/><stop offset="1" stop-color="#4A2238" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="ouro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#8C6A2F"/><stop offset=".18" stop-color="#E9D29A"/><stop offset=".35" stop-color="#C9A55A"/>
+  <stop offset=".6" stop-color="#F6E7B8"/><stop offset=".82" stop-color="#B08840"/><stop offset="1" stop-color="#6E5122"/>
+</linearGradient>
+<linearGradient id="prata" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7D838C"/><stop offset=".2" stop-color="#E9EDF2"/><stop offset=".45" stop-color="#AEB5BF"/>
+  <stop offset=".65" stop-color="#F7F9FB"/><stop offset="1" stop-color="#6B717A"/>
+</linearGradient>
+<linearGradient id="preto" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#0E0E10"/><stop offset=".25" stop-color="#4A4A52"/><stop offset=".45" stop-color="#1C1C20"/>
+  <stop offset=".7" stop-color="#3A3A40"/><stop offset="1" stop-color="#08080A"/>
+</linearGradient>
+<linearGradient id="corpo" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#753747"/><stop offset=".22" stop-color="#C78092"/>
+  <stop offset=".5" stop-color="#B5566E"/><stop offset=".8" stop-color="#99495D"/><stop offset="1" stop-color="#632F3C"/>
+</linearGradient>
+<linearGradient id="liquido" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#C06F83" stop-opacity=".85"/><stop offset="1" stop-color="#874052" stop-opacity=".95"/>
+</linearGradient>
+<linearGradient id="vidro" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".12" stop-color="#FFFFFF" stop-opacity=".08"/>
+  <stop offset=".85" stop-color="#FFFFFF" stop-opacity=".05"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".45"/>
+</linearGradient>
+<linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="600" height="600" fill="url(#fundo)"/><ellipse cx="300" cy="230" rx="300" ry="230" fill="url(#luz)"/><rect y="455" width="600" height="145" fill="#EAD0DB" opacity=".35"/><ellipse cx="300" cy="512" rx="190" ry="22" fill="url(#sombra)"/>
+<g transform="translate(395 360) rotate(-12)">
+  <rect x="-38" y="0" width="76" height="140" rx="6" fill="url(#ouro)"/>
+  <rect x="-38" y="0" width="76" height="12" fill="#000" opacity=".12"/>
+  <rect x="-30" y="40" width="10" height="90" rx="5" fill="#FFF" opacity=".35"/>
+</g>
+<rect x="215" y="300" width="96" height="190" rx="8" fill="url(#ouro)"/>
+<rect x="215" y="300" width="96" height="14" fill="#000" opacity=".15"/>
+<rect x="215" y="398" width="96" height="6" fill="#6E5122" opacity=".5"/>
+<text x="263" y="460" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2.4" fill="#4A3613">BELA ESSÊNCIA</text>
+<rect x="229" y="232" width="68" height="72" rx="4" fill="url(#ouro)"/>
+<path d="M237 236 L237 128 Q237 112 252 102 L289 78 L289 236 Z" fill="url(#corpo)"/>
+<path d="M243 230 L243 132 Q243 120 252 113" stroke="#FFF" stroke-width="5" fill="none" opacity=".45" stroke-linecap="round"/>
+<path d="M289 78 L289 236" stroke="#000" stroke-width="6" opacity=".12"/>
+<rect x="225" y="300" width="14" height="180" rx="7" fill="#FFF" opacity=".35"/>
+</svg>
