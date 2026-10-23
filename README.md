@@ -118,6 +118,7 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: a ilustração da página inicial foi trocada por uma foto real do Unsplash, com a ilustração antiga como reserva.
 - 23/10/2026: CSS e JavaScript passam a ter número de versão no endereço, o que garante que todos vejam a versão nova.
 - 23/10/2026: arquivos de estilo, script e imagem deixam de ficar presos no cache do navegador, então cada publicação aparece na hora.
 - 23/10/2026: produtos passam a usar fotos reais do Unsplash (licença livre, sem marcas visíveis), com as ilustrações próprias como reserva caso a foto não carregue.

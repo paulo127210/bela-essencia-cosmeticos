@@ -346,7 +346,13 @@ main { display: block; padding-bottom: 3rem; }
 .vitrine h1 { font-size: 2.3rem; margin: 0 0 .75rem; }
 .vitrine p { font-size: 1.15rem; }
 .vitrine .acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
-.vitrine-ilustracao { width: 100%; max-width: 22rem; justify-self: center; }
+.vitrine-ilustracao {
+  width: 100%; max-width: 26rem; justify-self: center;
+  aspect-ratio: 8 / 9; object-fit: cover;
+  border-radius: calc(var(--raio) * 1.5);
+  box-shadow: 0 12px 30px rgba(75, 20, 60, .18);
+  background: var(--superficie-2);
+}
 
 .diferenciais { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
 .diferenciais li {

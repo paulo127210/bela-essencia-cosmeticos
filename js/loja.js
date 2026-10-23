@@ -442,6 +442,11 @@
   window.addEventListener("storage", function (e) { if (e.key === CHAVE_CARRINHO) { BE.atualizarContador(); } });
 
   document.addEventListener("DOMContentLoaded", function () {
+    /* Imagens fixas das páginas: se a foto externa falhar, usa a versão local. */
+    document.querySelectorAll("img[data-reserva]").forEach(function (img) {
+      function trocar() { img.src = img.getAttribute("data-reserva"); img.removeAttribute("data-reserva"); }
+      if (img.complete && img.naturalWidth === 0) { trocar(); } else { img.addEventListener("error", trocar, { once: true }); }
+    });
     BE.atualizarContador();
     var pagina = document.body.getAttribute("data-pagina");
     if (pagina === "inicio") { iniciarInicio(); }

@@ -9,7 +9,7 @@ import pathlib
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 LOJA = "Bela Essência Cosméticos"
 # Mude a versão a cada publicação: obriga o navegador a baixar CSS e JS novos.
-VERSAO = "2026-10-23-3"
+VERSAO = "2026-10-23-4"
 
 LOGO = (
     '<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">'
@@ -260,7 +260,7 @@ pagina(
           <a class="botao botao-secundario" href="acessibilidade.html">Como navegar no site</a>
         </div>
       </div>
-      <img class="vitrine-ilustracao" src="img/vitrine.svg" alt="" width="360" height="360">
+      <img class="vitrine-ilustracao" src="https://images.unsplash.com/photo-1773372238338-f26460145162?w=800&h=900&fit=crop&auto=format&q=75" data-reserva="img/vitrine.svg" alt="Três batons abertos, em tons de rosa e coral, entre pedras claras sobre fundo rosa." width="800" height="900" fetchpriority="high">
     </section>
 
     <h2>Por que comprar com a gente</h2>
