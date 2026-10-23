@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar compra | Bela Essência Cosméticos</title>
+<meta name="description" content="Informe seus dados e o endereço de entrega para finalizar o pedido.">
+<meta name="theme-color" content="#4E1440">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/preferencias.js"></script>
+<script src="js/acessibilidade.js" defer></script>
+<script src="js/produtos.js" defer></script>
+<script src="js/loja.js" defer></script>
+<script src="js/formularios.js" defer></script>
+</head>
+<body data-pagina="finalizar">
+
+<header>
+  <div class="barra-topo">
+    <div class="recipiente">
+      <nav aria-label="Atalhos de navegação">
+        <ul class="lista-atalhos">
+          <li><a href="#conteudo">Ir para o conteúdo <span class="tecla" aria-hidden="true">1</span></a></li>
+          <li><a href="#menu-principal">Ir para o menu <span class="tecla" aria-hidden="true">2</span></a></li>
+          <li><a href="#campo-busca">Ir para a busca <span class="tecla" aria-hidden="true">3</span></a></li>
+          <li><a href="#rodape">Ir para o rodapé <span class="tecla" aria-hidden="true">4</span></a></li>
+        </ul>
+      </nav>
+      <div class="controles-rapidos">
+        <button type="button" class="botao-barra" data-acao="fonte-menos">A&minus;<span class="visualmente-oculto"> diminuir letra</span></button>
+        <button type="button" class="botao-barra" data-acao="fonte-mais">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+        <button type="button" class="botao-barra" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" class="botao-barra" id="botao-recursos" data-acao="painel" aria-expanded="false" aria-controls="painel-acessibilidade">Mais recursos de acessibilidade</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="painel-acessibilidade" id="painel-acessibilidade" aria-labelledby="titulo-recursos" hidden>
+    <div class="recipiente">
+      <h2 id="titulo-recursos" tabindex="-1">Recursos de acessibilidade</h2>
+      <p>As escolhas ficam salvas neste navegador. Para fechar este painel, pressione Esc.</p>
+      <div class="grade-recursos">
+        <fieldset class="grupo-recurso">
+          <legend>Tamanho da letra</legend>
+          <p aria-live="polite">Tamanho atual: <span class="estado-fonte">100%</span></p>
+          <div class="botoes">
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-menos">Diminuir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-padrao">Tamanho padrão</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-mais">Aumentar</button>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Tema de cores</legend>
+          <div class="opcao"><input type="radio" name="tema" id="tema-claro" value="claro"><label for="tema-claro">Claro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-escuro" value="escuro"><label for="tema-escuro">Escuro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-contraste" value="contraste"><label for="tema-contraste">Alto contraste, fundo preto e letras brancas e amarelas</label></div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Leitura</legend>
+          <div class="opcao"><input type="checkbox" id="opcao-espacamento"><label for="opcao-espacamento">Aumentar o espaço entre linhas, letras e palavras</label></div>
+          <div class="opcao"><input type="checkbox" id="opcao-dislexia"><label for="opcao-dislexia">Usar fonte de leitura facilitada</label></div>
+          <div class="campo">
+            <label for="opcao-daltonismo">Cores para daltonismo</label>
+            <select id="opcao-daltonismo">
+              <option value="">Cores padrão</option>
+              <option value="protan">Protanopia, dificuldade com vermelho</option>
+              <option value="deutan">Deuteranopia, dificuldade com verde</option>
+              <option value="tritan">Tritanopia, dificuldade com azul e amarelo</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso" id="grupo-voz">
+          <legend>Ouvir a página</legend>
+          <div class="campo">
+            <label for="velocidade-voz">Velocidade da voz</label>
+            <select id="velocidade-voz">
+              <option value="0.75">Devagar</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.25">Rápida</option>
+              <option value="1.5">Muito rápida</option>
+            </select>
+          </div>
+          <div class="botoes controles-voz">
+            <button type="button" class="botao botao-pequeno" data-acao="ouvir">Ouvir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="pausar">Pausar</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="parar">Parar</button>
+          </div>
+          <p>Lê o texto selecionado ou, se nada estiver selecionado, o conteúdo principal da página.</p>
+          <p id="estado-voz" role="status"></p>
+        </fieldset>
+      </div>
+      <p class="controles-voz espaco-topo">
+        <button type="button" class="botao botao-secundario botao-pequeno" data-acao="restaurar">Restaurar configurações padrão</button>
+        <button type="button" class="botao botao-pequeno" data-acao="fechar-painel">Fechar painel</button>
+        <a href="acessibilidade.html">Saiba como usar os recursos</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="cabecalho">
+    <div class="recipiente">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="currentColor"/><path d="M24 9c6 6 9 11 9 16a9 9 0 0 1-18 0c0-5 3-10 9-16z" fill="#FFF7FA"/><path d="M24 18v18M24 27c3-1 5-3 6-6M24 30c-3-1-5-3-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <span class="marca-nome">Bela Essência<span class="marca-sub">Cosméticos</span></span>
+        <span class="visualmente-oculto">, página inicial</span>
+      </a>
+      <form class="form-busca" role="search" action="produtos.html" method="get" aria-label="Buscar produtos">
+        <div class="campo">
+          <label for="campo-busca">Buscar produtos <span class="tecla" aria-hidden="true">3</span></label>
+          <input type="search" id="campo-busca" name="busca" maxlength="60" autocomplete="off" placeholder="Ex.: batom, perfume">
+        </div>
+        <button type="submit" class="botao">Buscar</button>
+      </form>
+      <a class="link-carrinho" href="carrinho.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Carrinho <span class="contador-carrinho">0</span><span class="visualmente-oculto rotulo-itens"> itens</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="menu-principal" id="menu-principal" aria-label="Menu principal" tabindex="-1">
+    <div class="recipiente">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Todos os produtos</a></li>
+        <li><a href="produtos.html?categoria=maquiagem">Maquiagem</a></li>
+        <li><a href="produtos.html?categoria=pele">Pele</a></li>
+        <li><a href="produtos.html?categoria=cabelos">Cabelos</a></li>
+        <li><a href="produtos.html?categoria=perfumes">Perfumes</a></li>
+        <li><a href="produtos.html?categoria=corpo">Corpo e banho</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <div class="recipiente">
+    <nav class="trilha" aria-label="Você está aqui">
+      <ol>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><span aria-current="page">Finalizar compra</span></li>
+      </ol>
+    </nav>
+
+    <h1>Finalizar compra</h1>
+    <noscript><p class="aviso">Esta parte da loja precisa do JavaScript ativado. Se preferir, faça seu pedido pelo telefone (41) 3000-0000.</p></noscript>
+    <div id="checkout-vazio" hidden>
+      <div class="estado-vazio">
+        <p>Seu carrinho está vazio, então ainda não há o que finalizar.</p>
+        <a class="botao" href="produtos.html">Conhecer os produtos</a>
+      </div>
+    </div>
+    <section id="confirmacao" class="aviso-sucesso" hidden></section>
+    <div id="area-checkout" class="layout-checkout">
+      <form id="form-checkout" novalidate aria-labelledby="titulo-form-checkout">
+        <h2 id="titulo-form-checkout" class="visualmente-oculto">Dados do pedido</h2>
+        <p>Os campos marcados com asterisco são obrigatórios. Ao enviar, se algo estiver faltando, uma lista com os problemas aparece no topo do formulário.</p>
+        <div class="resumo-erros" tabindex="-1" hidden></div>
+
+        <fieldset class="grupo-form">
+          <legend>1. Seus dados</legend>
+        <div class="campo">
+          <label for="nome" data-nome="nome completo">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="nome" name="nome" data-regra="nome" autocomplete="name" required aria-required="true" maxlength="80">
+          <p class="mensagem-erro" id="erro-nome" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <p class="dica" id="dica-email">Enviaremos a confirmação do pedido para este e-mail.</p>
+          <input type="email" id="email" name="email" data-regra="email" autocomplete="email" data-dica="dica-email" aria-describedby="dica-email" required aria-required="true" maxlength="100">
+          <p class="mensagem-erro" id="erro-email" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone com DDD <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <p class="dica" id="dica-telefone">Só números, por exemplo 41 99999 8888.</p>
+          <input type="tel" id="telefone" name="telefone" data-regra="telefone" autocomplete="tel-national" data-dica="dica-telefone" aria-describedby="dica-telefone" required aria-required="true" maxlength="16" inputmode="tel" data-formato="telefone">
+          <p class="mensagem-erro" id="erro-telefone" hidden></p>
+        </div>
+        </fieldset>
+
+        <fieldset class="grupo-form">
+          <legend>2. Endereço de entrega</legend>
+          <div class="campo">
+            <label for="cep">CEP <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <p class="dica" id="dica-cep">Digite os 8 números e use o botão Buscar endereço para preencher rua, bairro e cidade automaticamente.</p>
+            <input type="text" id="cep" name="cep" data-regra="cep" autocomplete="postal-code" inputmode="numeric" maxlength="9" data-formato="cep" data-dica="dica-cep" aria-describedby="dica-cep" required aria-required="true">
+            <p class="mensagem-erro" id="erro-cep" hidden></p>
+            <p><button type="button" class="botao botao-secundario botao-pequeno" id="buscar-cep">Buscar endereço pelo CEP</button></p>
+          </div>
+        <div class="campo">
+          <label for="endereco" data-nome="rua ou avenida">Rua ou avenida <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="endereco" name="endereco" data-regra="obrigatorio" autocomplete="address-line1" required aria-required="true" maxlength="120">
+          <p class="mensagem-erro" id="erro-endereco" hidden></p>
+        </div>
+          <div class="campos-linha">
+        <div class="campo">
+          <label for="numero" data-nome="número">Número <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="numero" name="numero" data-regra="obrigatorio" required aria-required="true" maxlength="10">
+          <p class="mensagem-erro" id="erro-numero" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="complemento">Complemento</label>
+          <p class="dica" id="dica-complemento">Opcional. Exemplo: apartamento 12.</p>
+          <input type="text" id="complemento" name="complemento" data-regra="" autocomplete="address-line2" data-dica="dica-complemento" aria-describedby="dica-complemento" maxlength="60">
+          <p class="mensagem-erro" id="erro-complemento" hidden></p>
+        </div>
+          </div>
+        <div class="campo">
+          <label for="bairro" data-nome="bairro">Bairro <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="bairro" name="bairro" data-regra="obrigatorio" autocomplete="address-level3" required aria-required="true" maxlength="60">
+          <p class="mensagem-erro" id="erro-bairro" hidden></p>
+        </div>
+          <div class="campos-linha">
+        <div class="campo">
+          <label for="cidade" data-nome="cidade">Cidade <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="cidade" name="cidade" data-regra="obrigatorio" autocomplete="address-level2" required aria-required="true" maxlength="60">
+          <p class="mensagem-erro" id="erro-cidade" hidden></p>
+        </div>
+            <div class="campo">
+              <label for="uf" data-nome="estado">Estado <span class="obrigatorio" aria-hidden="true">*</span></label>
+              <select id="uf" name="uf" data-regra="selecao" autocomplete="address-level1" required aria-required="true"><option value="">Escolha o estado</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option></select>
+              <p class="mensagem-erro" id="erro-uf" hidden></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo-form">
+          <legend>3. Entrega</legend>
+          <div class="opcao"><input type="checkbox" id="etiqueta-braille" name="etiqueta-braille" checked><label for="etiqueta-braille">Colocar etiqueta em Braille nos produtos que não têm Braille de fábrica, sem custo</label></div>
+          <div class="campo">
+            <label for="observacoes">Instruções para a entrega</label>
+            <p class="dica" id="dica-observacoes">Opcional. Exemplo: tocar a campainha duas vezes. Até 300 caracteres.</p>
+            <textarea id="observacoes" name="observacoes" maxlength="300" aria-describedby="dica-observacoes contador-observacoes"></textarea>
+            <p class="dica" id="contador-observacoes"></p>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo-form">
+          <legend>4. Forma de pagamento <span class="obrigatorio" aria-hidden="true">*</span></legend>
+          <div class="opcao"><input type="radio" id="pagamento" name="pagamento" value="pix" data-grupo="pagamento" data-mensagem="Escolha a forma de pagamento."><label for="pagamento">Pix</label></div>
+          <div class="opcao"><input type="radio" id="pagamento-boleto" name="pagamento" value="boleto" data-grupo="pagamento"><label for="pagamento-boleto">Boleto bancário</label></div>
+          <div class="opcao"><input type="radio" id="pagamento-entrega" name="pagamento" value="entrega" data-grupo="pagamento"><label for="pagamento-entrega">Pagar na entrega, com cartão ou dinheiro</label></div>
+          <p class="mensagem-erro" id="erro-pagamento" hidden></p>
+          <p class="dica">Por segurança, este site não pede número de cartão.</p>
+        </fieldset>
+
+        <fieldset class="grupo-form">
+          <legend>5. Privacidade</legend>
+          <div class="opcao">
+            <input type="checkbox" id="consentimento" name="consentimento" data-mensagem="Para continuar, confirme que leu a política de privacidade." required aria-required="true">
+            <label for="consentimento">Li a <a href="privacidade.html">política de privacidade</a> e autorizo o uso dos meus dados somente para entregar este pedido. <span class="obrigatorio" aria-hidden="true">*</span></label>
+          </div>
+          <p class="mensagem-erro" id="erro-consentimento" hidden></p>
+        </fieldset>
+
+        <button type="submit" class="botao">Confirmar pedido</button>
+      </form>
+
+      <aside class="resumo-pedido" aria-labelledby="titulo-resumo-checkout">
+        <h2 id="titulo-resumo-checkout">Resumo do pedido</h2>
+        <ul class="lista-resumo" id="itens-resumo"></ul>
+        <dl id="valores-checkout"></dl>
+        <p><a href="carrinho.html">Alterar produtos no carrinho</a></p>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="rodape" id="rodape" tabindex="-1">
+  <div class="recipiente">
+    <section aria-labelledby="rodape-loja">
+      <h2 id="rodape-loja">Bela Essência Cosméticos</h2>
+      <p>Beleza para todas, com produtos identificados em Braille e descritos para quem não enxerga.</p>
+    </section>
+    <section aria-labelledby="rodape-atendimento">
+      <h2 id="rodape-atendimento">Atendimento</h2>
+      <p>De segunda a sexta, das 9h às 18h.</p>
+      <p>Telefone e WhatsApp: <a href="tel:+554130000000">(41) 3000-0000</a></p>
+      <p>E-mail: <a href="mailto:contato@belaessencia.com.br">contato@belaessencia.com.br</a></p>
+    </section>
+    <nav aria-labelledby="rodape-links">
+      <h2 id="rodape-links">Links úteis</h2>
+      <ul>
+        <li><a href="acessibilidade.html">Acessibilidade e atalhos</a></li>
+        <li><a href="mapa-do-site.html">Mapa do site</a></li>
+        <li><a href="privacidade.html">Política de privacidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </nav>
+    <p class="rodape-final">Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
+  </div>
+</footer>
+<div id="aviso-educado" class="visualmente-oculto" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="aviso-urgente" class="visualmente-oculto" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+</body>
+</html>

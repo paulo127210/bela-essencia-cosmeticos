@@ -1,0 +1,13 @@
+{
+  "name": "bela-essencia-testes",
+  "private": true,
+  "description": "Testes automáticos de acessibilidade (axe-core) e do fluxo de compra.",
+  "scripts": {
+    "pretestar": "playwright install chromium",
+    "testar": "node testar.js"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "playwright": "^1.50.0"
+  }
+}

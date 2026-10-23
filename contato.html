@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fale conosco | Bela Essência Cosméticos</title>
+<meta name="description" content="Fale com a Bela Essência por formulário, telefone, WhatsApp ou e-mail.">
+<meta name="theme-color" content="#4E1440">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/preferencias.js"></script>
+<script src="js/acessibilidade.js" defer></script>
+<script src="js/produtos.js" defer></script>
+<script src="js/loja.js" defer></script>
+<script src="js/formularios.js" defer></script>
+</head>
+<body data-pagina="contato">
+
+<header>
+  <div class="barra-topo">
+    <div class="recipiente">
+      <nav aria-label="Atalhos de navegação">
+        <ul class="lista-atalhos">
+          <li><a href="#conteudo">Ir para o conteúdo <span class="tecla" aria-hidden="true">1</span></a></li>
+          <li><a href="#menu-principal">Ir para o menu <span class="tecla" aria-hidden="true">2</span></a></li>
+          <li><a href="#campo-busca">Ir para a busca <span class="tecla" aria-hidden="true">3</span></a></li>
+          <li><a href="#rodape">Ir para o rodapé <span class="tecla" aria-hidden="true">4</span></a></li>
+        </ul>
+      </nav>
+      <div class="controles-rapidos">
+        <button type="button" class="botao-barra" data-acao="fonte-menos">A&minus;<span class="visualmente-oculto"> diminuir letra</span></button>
+        <button type="button" class="botao-barra" data-acao="fonte-mais">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+        <button type="button" class="botao-barra" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" class="botao-barra" id="botao-recursos" data-acao="painel" aria-expanded="false" aria-controls="painel-acessibilidade">Mais recursos de acessibilidade</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="painel-acessibilidade" id="painel-acessibilidade" aria-labelledby="titulo-recursos" hidden>
+    <div class="recipiente">
+      <h2 id="titulo-recursos" tabindex="-1">Recursos de acessibilidade</h2>
+      <p>As escolhas ficam salvas neste navegador. Para fechar este painel, pressione Esc.</p>
+      <div class="grade-recursos">
+        <fieldset class="grupo-recurso">
+          <legend>Tamanho da letra</legend>
+          <p aria-live="polite">Tamanho atual: <span class="estado-fonte">100%</span></p>
+          <div class="botoes">
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-menos">Diminuir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-padrao">Tamanho padrão</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-mais">Aumentar</button>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Tema de cores</legend>
+          <div class="opcao"><input type="radio" name="tema" id="tema-claro" value="claro"><label for="tema-claro">Claro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-escuro" value="escuro"><label for="tema-escuro">Escuro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-contraste" value="contraste"><label for="tema-contraste">Alto contraste, fundo preto e letras brancas e amarelas</label></div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Leitura</legend>
+          <div class="opcao"><input type="checkbox" id="opcao-espacamento"><label for="opcao-espacamento">Aumentar o espaço entre linhas, letras e palavras</label></div>
+          <div class="opcao"><input type="checkbox" id="opcao-dislexia"><label for="opcao-dislexia">Usar fonte de leitura facilitada</label></div>
+          <div class="campo">
+            <label for="opcao-daltonismo">Cores para daltonismo</label>
+            <select id="opcao-daltonismo">
+              <option value="">Cores padrão</option>
+              <option value="protan">Protanopia, dificuldade com vermelho</option>
+              <option value="deutan">Deuteranopia, dificuldade com verde</option>
+              <option value="tritan">Tritanopia, dificuldade com azul e amarelo</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso" id="grupo-voz">
+          <legend>Ouvir a página</legend>
+          <div class="campo">
+            <label for="velocidade-voz">Velocidade da voz</label>
+            <select id="velocidade-voz">
+              <option value="0.75">Devagar</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.25">Rápida</option>
+              <option value="1.5">Muito rápida</option>
+            </select>
+          </div>
+          <div class="botoes controles-voz">
+            <button type="button" class="botao botao-pequeno" data-acao="ouvir">Ouvir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="pausar">Pausar</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="parar">Parar</button>
+          </div>
+          <p>Lê o texto selecionado ou, se nada estiver selecionado, o conteúdo principal da página.</p>
+          <p id="estado-voz" role="status"></p>
+        </fieldset>
+      </div>
+      <p class="controles-voz espaco-topo">
+        <button type="button" class="botao botao-secundario botao-pequeno" data-acao="restaurar">Restaurar configurações padrão</button>
+        <button type="button" class="botao botao-pequeno" data-acao="fechar-painel">Fechar painel</button>
+        <a href="acessibilidade.html">Saiba como usar os recursos</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="cabecalho">
+    <div class="recipiente">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="currentColor"/><path d="M24 9c6 6 9 11 9 16a9 9 0 0 1-18 0c0-5 3-10 9-16z" fill="#FFF7FA"/><path d="M24 18v18M24 27c3-1 5-3 6-6M24 30c-3-1-5-3-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <span class="marca-nome">Bela Essência<span class="marca-sub">Cosméticos</span></span>
+        <span class="visualmente-oculto">, página inicial</span>
+      </a>
+      <form class="form-busca" role="search" action="produtos.html" method="get" aria-label="Buscar produtos">
+        <div class="campo">
+          <label for="campo-busca">Buscar produtos <span class="tecla" aria-hidden="true">3</span></label>
+          <input type="search" id="campo-busca" name="busca" maxlength="60" autocomplete="off" placeholder="Ex.: batom, perfume">
+        </div>
+        <button type="submit" class="botao">Buscar</button>
+      </form>
+      <a class="link-carrinho" href="carrinho.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Carrinho <span class="contador-carrinho">0</span><span class="visualmente-oculto rotulo-itens"> itens</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="menu-principal" id="menu-principal" aria-label="Menu principal" tabindex="-1">
+    <div class="recipiente">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Todos os produtos</a></li>
+        <li><a href="produtos.html?categoria=maquiagem">Maquiagem</a></li>
+        <li><a href="produtos.html?categoria=pele">Pele</a></li>
+        <li><a href="produtos.html?categoria=cabelos">Cabelos</a></li>
+        <li><a href="produtos.html?categoria=perfumes">Perfumes</a></li>
+        <li><a href="produtos.html?categoria=corpo">Corpo e banho</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
+        <li><a href="contato.html" aria-current="page">Fale conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <div class="recipiente">
+    <nav class="trilha" aria-label="Você está aqui">
+      <ol>
+        <li><a href="index.html">Início</a></li>
+        <li><span aria-current="page">Fale conosco</span></li>
+      </ol>
+    </nav>
+
+    <h1>Fale conosco</h1>
+    <p>Prefere conversar? Ligue ou mande mensagem pelo WhatsApp no <a href="tel:+554130000000">(41) 3000-0000</a>, de segunda a sexta, das 9h às 18h. Nossa equipe está preparada para ajudar a escolher produtos por telefone.</p>
+    <section id="contato-sucesso" class="aviso-sucesso" hidden></section>
+    <form id="form-contato" novalidate aria-labelledby="titulo-form-contato">
+      <h2 id="titulo-form-contato">Envie uma mensagem</h2>
+      <p>Os campos marcados com asterisco são obrigatórios.</p>
+      <div class="resumo-erros" tabindex="-1" hidden></div>
+      <fieldset class="grupo-form">
+        <legend>Seus dados</legend>
+        <div class="campo">
+          <label for="contato-nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="text" id="contato-nome" name="contato-nome" data-regra="nome" autocomplete="name" required aria-required="true" maxlength="80">
+          <p class="mensagem-erro" id="erro-contato-nome" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="contato-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <input type="email" id="contato-email" name="contato-email" data-regra="email" autocomplete="email" required aria-required="true" maxlength="100">
+          <p class="mensagem-erro" id="erro-contato-email" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="contato-telefone">Telefone com DDD</label>
+          <p class="dica" id="dica-contato-telefone">Opcional. Preencha se quiser retorno por telefone ou WhatsApp.</p>
+          <input type="tel" id="contato-telefone" name="contato-telefone" data-regra="telefoneOpcional" autocomplete="tel-national" data-dica="dica-contato-telefone" aria-describedby="dica-contato-telefone" maxlength="16" inputmode="tel" data-formato="telefone">
+          <p class="mensagem-erro" id="erro-contato-telefone" hidden></p>
+        </div>
+      </fieldset>
+      <fieldset class="grupo-form">
+        <legend>Sua mensagem</legend>
+        <div class="campo">
+          <label for="assunto" data-nome="assunto">Assunto <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <select id="assunto" name="assunto" data-regra="selecao" required aria-required="true">
+            <option value="">Escolha o assunto</option>
+            <option value="duvida">Dúvida sobre um produto</option>
+            <option value="pedido">Acompanhar um pedido</option>
+            <option value="troca">Troca ou devolução</option>
+            <option value="acessibilidade">Problema de acessibilidade no site</option>
+            <option value="outro">Outro assunto</option>
+          </select>
+          <p class="mensagem-erro" id="erro-assunto" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="mensagem">Mensagem <span class="obrigatorio" aria-hidden="true">*</span></label>
+          <p class="dica" id="dica-mensagem">Entre 10 e 1000 caracteres.</p>
+          <textarea id="mensagem" name="mensagem" maxlength="1000" data-regra="mensagem" data-dica="dica-mensagem" aria-describedby="dica-mensagem" required aria-required="true"></textarea>
+          <p class="dica" id="contador-mensagem"></p>
+          <p class="mensagem-erro" id="erro-mensagem" hidden></p>
+        </div>
+      </fieldset>
+      <fieldset class="grupo-form">
+        <legend>Como prefere receber a resposta? <span class="obrigatorio" aria-hidden="true">*</span></legend>
+        <div class="opcao"><input type="radio" id="retorno" name="retorno" value="email" data-grupo="retorno" data-mensagem="Escolha como prefere receber a resposta."><label for="retorno">E-mail</label></div>
+        <div class="opcao"><input type="radio" id="retorno-telefone" name="retorno" value="telefone" data-grupo="retorno"><label for="retorno-telefone">Ligação telefônica</label></div>
+        <div class="opcao"><input type="radio" id="retorno-whatsapp" name="retorno" value="whatsapp" data-grupo="retorno"><label for="retorno-whatsapp">WhatsApp, por mensagem de voz</label></div>
+        <p class="mensagem-erro" id="erro-retorno" hidden></p>
+      </fieldset>
+      <div class="opcao">
+        <input type="checkbox" id="contato-consentimento" name="consentimento" data-mensagem="Para enviar, confirme que leu a política de privacidade." required aria-required="true">
+        <label for="contato-consentimento">Li a <a href="privacidade.html">política de privacidade</a> e autorizo o uso dos meus dados para responder a esta mensagem. <span class="obrigatorio" aria-hidden="true">*</span></label>
+      </div>
+      <p class="mensagem-erro" id="erro-contato-consentimento" hidden></p>
+      <p><button type="submit" class="botao">Enviar mensagem</button></p>
+    </form>
+
+  </div>
+</main>
+
+<footer class="rodape" id="rodape" tabindex="-1">
+  <div class="recipiente">
+    <section aria-labelledby="rodape-loja">
+      <h2 id="rodape-loja">Bela Essência Cosméticos</h2>
+      <p>Beleza para todas, com produtos identificados em Braille e descritos para quem não enxerga.</p>
+    </section>
+    <section aria-labelledby="rodape-atendimento">
+      <h2 id="rodape-atendimento">Atendimento</h2>
+      <p>De segunda a sexta, das 9h às 18h.</p>
+      <p>Telefone e WhatsApp: <a href="tel:+554130000000">(41) 3000-0000</a></p>
+      <p>E-mail: <a href="mailto:contato@belaessencia.com.br">contato@belaessencia.com.br</a></p>
+    </section>
+    <nav aria-labelledby="rodape-links">
+      <h2 id="rodape-links">Links úteis</h2>
+      <ul>
+        <li><a href="acessibilidade.html">Acessibilidade e atalhos</a></li>
+        <li><a href="mapa-do-site.html">Mapa do site</a></li>
+        <li><a href="privacidade.html">Política de privacidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </nav>
+    <p class="rodape-final">Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
+  </div>
+</footer>
+<div id="aviso-educado" class="visualmente-oculto" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="aviso-urgente" class="visualmente-oculto" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+</body>
+</html>

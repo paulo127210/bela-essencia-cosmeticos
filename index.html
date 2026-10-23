@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosméticos acessíveis para todas | Bela Essência Cosméticos</title>
+<meta name="description" content="Loja de cosméticos acessível para pessoas cegas e com baixa visão. Produtos com Braille e descrição de embalagem pelo toque.">
+<meta name="theme-color" content="#4E1440">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/preferencias.js"></script>
+<script src="js/acessibilidade.js" defer></script>
+<script src="js/produtos.js" defer></script>
+<script src="js/loja.js" defer></script>
+</head>
+<body data-pagina="inicio">
+
+<header>
+  <div class="barra-topo">
+    <div class="recipiente">
+      <nav aria-label="Atalhos de navegação">
+        <ul class="lista-atalhos">
+          <li><a href="#conteudo">Ir para o conteúdo <span class="tecla" aria-hidden="true">1</span></a></li>
+          <li><a href="#menu-principal">Ir para o menu <span class="tecla" aria-hidden="true">2</span></a></li>
+          <li><a href="#campo-busca">Ir para a busca <span class="tecla" aria-hidden="true">3</span></a></li>
+          <li><a href="#rodape">Ir para o rodapé <span class="tecla" aria-hidden="true">4</span></a></li>
+        </ul>
+      </nav>
+      <div class="controles-rapidos">
+        <button type="button" class="botao-barra" data-acao="fonte-menos">A&minus;<span class="visualmente-oculto"> diminuir letra</span></button>
+        <button type="button" class="botao-barra" data-acao="fonte-mais">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+        <button type="button" class="botao-barra" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" class="botao-barra" id="botao-recursos" data-acao="painel" aria-expanded="false" aria-controls="painel-acessibilidade">Mais recursos de acessibilidade</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="painel-acessibilidade" id="painel-acessibilidade" aria-labelledby="titulo-recursos" hidden>
+    <div class="recipiente">
+      <h2 id="titulo-recursos" tabindex="-1">Recursos de acessibilidade</h2>
+      <p>As escolhas ficam salvas neste navegador. Para fechar este painel, pressione Esc.</p>
+      <div class="grade-recursos">
+        <fieldset class="grupo-recurso">
+          <legend>Tamanho da letra</legend>
+          <p aria-live="polite">Tamanho atual: <span class="estado-fonte">100%</span></p>
+          <div class="botoes">
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-menos">Diminuir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-padrao">Tamanho padrão</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-mais">Aumentar</button>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Tema de cores</legend>
+          <div class="opcao"><input type="radio" name="tema" id="tema-claro" value="claro"><label for="tema-claro">Claro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-escuro" value="escuro"><label for="tema-escuro">Escuro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-contraste" value="contraste"><label for="tema-contraste">Alto contraste, fundo preto e letras brancas e amarelas</label></div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Leitura</legend>
+          <div class="opcao"><input type="checkbox" id="opcao-espacamento"><label for="opcao-espacamento">Aumentar o espaço entre linhas, letras e palavras</label></div>
+          <div class="opcao"><input type="checkbox" id="opcao-dislexia"><label for="opcao-dislexia">Usar fonte de leitura facilitada</label></div>
+          <div class="campo">
+            <label for="opcao-daltonismo">Cores para daltonismo</label>
+            <select id="opcao-daltonismo">
+              <option value="">Cores padrão</option>
+              <option value="protan">Protanopia, dificuldade com vermelho</option>
+              <option value="deutan">Deuteranopia, dificuldade com verde</option>
+              <option value="tritan">Tritanopia, dificuldade com azul e amarelo</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso" id="grupo-voz">
+          <legend>Ouvir a página</legend>
+          <div class="campo">
+            <label for="velocidade-voz">Velocidade da voz</label>
+            <select id="velocidade-voz">
+              <option value="0.75">Devagar</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.25">Rápida</option>
+              <option value="1.5">Muito rápida</option>
+            </select>
+          </div>
+          <div class="botoes controles-voz">
+            <button type="button" class="botao botao-pequeno" data-acao="ouvir">Ouvir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="pausar">Pausar</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="parar">Parar</button>
+          </div>
+          <p>Lê o texto selecionado ou, se nada estiver selecionado, o conteúdo principal da página.</p>
+          <p id="estado-voz" role="status"></p>
+        </fieldset>
+      </div>
+      <p class="controles-voz espaco-topo">
+        <button type="button" class="botao botao-secundario botao-pequeno" data-acao="restaurar">Restaurar configurações padrão</button>
+        <button type="button" class="botao botao-pequeno" data-acao="fechar-painel">Fechar painel</button>
+        <a href="acessibilidade.html">Saiba como usar os recursos</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="cabecalho">
+    <div class="recipiente">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="currentColor"/><path d="M24 9c6 6 9 11 9 16a9 9 0 0 1-18 0c0-5 3-10 9-16z" fill="#FFF7FA"/><path d="M24 18v18M24 27c3-1 5-3 6-6M24 30c-3-1-5-3-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <span class="marca-nome">Bela Essência<span class="marca-sub">Cosméticos</span></span>
+        <span class="visualmente-oculto">, página inicial</span>
+      </a>
+      <form class="form-busca" role="search" action="produtos.html" method="get" aria-label="Buscar produtos">
+        <div class="campo">
+          <label for="campo-busca">Buscar produtos <span class="tecla" aria-hidden="true">3</span></label>
+          <input type="search" id="campo-busca" name="busca" maxlength="60" autocomplete="off" placeholder="Ex.: batom, perfume">
+        </div>
+        <button type="submit" class="botao">Buscar</button>
+      </form>
+      <a class="link-carrinho" href="carrinho.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Carrinho <span class="contador-carrinho">0</span><span class="visualmente-oculto rotulo-itens"> itens</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="menu-principal" id="menu-principal" aria-label="Menu principal" tabindex="-1">
+    <div class="recipiente">
+      <ul>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="produtos.html">Todos os produtos</a></li>
+        <li><a href="produtos.html?categoria=maquiagem">Maquiagem</a></li>
+        <li><a href="produtos.html?categoria=pele">Pele</a></li>
+        <li><a href="produtos.html?categoria=cabelos">Cabelos</a></li>
+        <li><a href="produtos.html?categoria=perfumes">Perfumes</a></li>
+        <li><a href="produtos.html?categoria=corpo">Corpo e banho</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <div class="recipiente">
+    
+
+    <section class="vitrine" aria-labelledby="titulo-inicio">
+      <div>
+        <h1 id="titulo-inicio">Beleza que você reconhece pelo toque</h1>
+        <p>Maquiagem, cuidados com a pele, cabelos e perfumes descritos com detalhes: cor, textura, aroma e como é a embalagem na sua mão.</p>
+        <p>A maioria dos nossos produtos tem o nome escrito em Braille. Os que não têm vão com etiqueta em Braille gratuita.</p>
+        <div class="acoes">
+          <a class="botao" href="produtos.html">Ver todos os produtos</a>
+          <a class="botao botao-secundario" href="acessibilidade.html">Como navegar no site</a>
+        </div>
+      </div>
+      <img class="vitrine-ilustracao" src="img/vitrine.svg" alt="" width="360" height="360">
+    </section>
+
+    <h2>Por que comprar com a gente</h2>
+    <ul class="diferenciais">
+      <li><strong>Braille na embalagem</strong>Nome do produto e, nas bases, o número do tom escritos em Braille.</li>
+      <li><strong>Descrição pelo toque</strong>Cada produto explica o formato do frasco, a tampa e os relevos para você reconhecer em casa.</li>
+      <li><strong>Site feito para leitores de tela</strong>Testado com NVDA, JAWS, VoiceOver e TalkBack, e navegável só pelo teclado.</li>
+      <li><strong>Frete grátis acima de R$ 199</strong>E atendimento por telefone para quem preferir comprar falando.</li>
+    </ul>
+
+    <section aria-labelledby="titulo-categorias">
+      <h2 id="titulo-categorias">Compre por categoria</h2>
+      <ul class="lista-categorias">
+        <li><a href="produtos.html?categoria=maquiagem">Maquiagem</a></li>
+        <li><a href="produtos.html?categoria=pele">Cuidados com a pele</a></li>
+        <li><a href="produtos.html?categoria=cabelos">Cabelos</a></li>
+        <li><a href="produtos.html?categoria=perfumes">Perfumes</a></li>
+        <li><a href="produtos.html?categoria=corpo">Corpo e banho</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="titulo-destaques">
+      <h2 id="titulo-destaques">Destaques da semana</h2>
+    <noscript><p class="aviso">Esta parte da loja precisa do JavaScript ativado. Se preferir, faça seu pedido pelo telefone (41) 3000-0000.</p></noscript>
+      <ul class="grade-produtos" id="lista-destaques"></ul>
+      <p class="espaco-topo"><a href="produtos.html">Ver todos os 16 produtos</a></p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="rodape" id="rodape" tabindex="-1">
+  <div class="recipiente">
+    <section aria-labelledby="rodape-loja">
+      <h2 id="rodape-loja">Bela Essência Cosméticos</h2>
+      <p>Beleza para todas, com produtos identificados em Braille e descritos para quem não enxerga.</p>
+    </section>
+    <section aria-labelledby="rodape-atendimento">
+      <h2 id="rodape-atendimento">Atendimento</h2>
+      <p>De segunda a sexta, das 9h às 18h.</p>
+      <p>Telefone e WhatsApp: <a href="tel:+554130000000">(41) 3000-0000</a></p>
+      <p>E-mail: <a href="mailto:contato@belaessencia.com.br">contato@belaessencia.com.br</a></p>
+    </section>
+    <nav aria-labelledby="rodape-links">
+      <h2 id="rodape-links">Links úteis</h2>
+      <ul>
+        <li><a href="acessibilidade.html">Acessibilidade e atalhos</a></li>
+        <li><a href="mapa-do-site.html">Mapa do site</a></li>
+        <li><a href="privacidade.html">Política de privacidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </nav>
+    <p class="rodape-final">Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
+  </div>
+</footer>
+<div id="aviso-educado" class="visualmente-oculto" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="aviso-urgente" class="visualmente-oculto" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+</body>
+</html>

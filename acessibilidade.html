@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acessibilidade | Bela Essência Cosméticos</title>
+<meta name="description" content="Recursos de acessibilidade, atalhos de teclado e como navegar na loja com leitor de tela.">
+<meta name="theme-color" content="#4E1440">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/preferencias.js"></script>
+<script src="js/acessibilidade.js" defer></script>
+<script src="js/produtos.js" defer></script>
+<script src="js/loja.js" defer></script>
+</head>
+<body data-pagina="acessibilidade">
+
+<header>
+  <div class="barra-topo">
+    <div class="recipiente">
+      <nav aria-label="Atalhos de navegação">
+        <ul class="lista-atalhos">
+          <li><a href="#conteudo">Ir para o conteúdo <span class="tecla" aria-hidden="true">1</span></a></li>
+          <li><a href="#menu-principal">Ir para o menu <span class="tecla" aria-hidden="true">2</span></a></li>
+          <li><a href="#campo-busca">Ir para a busca <span class="tecla" aria-hidden="true">3</span></a></li>
+          <li><a href="#rodape">Ir para o rodapé <span class="tecla" aria-hidden="true">4</span></a></li>
+        </ul>
+      </nav>
+      <div class="controles-rapidos">
+        <button type="button" class="botao-barra" data-acao="fonte-menos">A&minus;<span class="visualmente-oculto"> diminuir letra</span></button>
+        <button type="button" class="botao-barra" data-acao="fonte-mais">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+        <button type="button" class="botao-barra" data-acao="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" class="botao-barra" id="botao-recursos" data-acao="painel" aria-expanded="false" aria-controls="painel-acessibilidade">Mais recursos de acessibilidade</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="painel-acessibilidade" id="painel-acessibilidade" aria-labelledby="titulo-recursos" hidden>
+    <div class="recipiente">
+      <h2 id="titulo-recursos" tabindex="-1">Recursos de acessibilidade</h2>
+      <p>As escolhas ficam salvas neste navegador. Para fechar este painel, pressione Esc.</p>
+      <div class="grade-recursos">
+        <fieldset class="grupo-recurso">
+          <legend>Tamanho da letra</legend>
+          <p aria-live="polite">Tamanho atual: <span class="estado-fonte">100%</span></p>
+          <div class="botoes">
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-menos">Diminuir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-padrao">Tamanho padrão</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="fonte-mais">Aumentar</button>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Tema de cores</legend>
+          <div class="opcao"><input type="radio" name="tema" id="tema-claro" value="claro"><label for="tema-claro">Claro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-escuro" value="escuro"><label for="tema-escuro">Escuro</label></div>
+          <div class="opcao"><input type="radio" name="tema" id="tema-contraste" value="contraste"><label for="tema-contraste">Alto contraste, fundo preto e letras brancas e amarelas</label></div>
+        </fieldset>
+        <fieldset class="grupo-recurso">
+          <legend>Leitura</legend>
+          <div class="opcao"><input type="checkbox" id="opcao-espacamento"><label for="opcao-espacamento">Aumentar o espaço entre linhas, letras e palavras</label></div>
+          <div class="opcao"><input type="checkbox" id="opcao-dislexia"><label for="opcao-dislexia">Usar fonte de leitura facilitada</label></div>
+          <div class="campo">
+            <label for="opcao-daltonismo">Cores para daltonismo</label>
+            <select id="opcao-daltonismo">
+              <option value="">Cores padrão</option>
+              <option value="protan">Protanopia, dificuldade com vermelho</option>
+              <option value="deutan">Deuteranopia, dificuldade com verde</option>
+              <option value="tritan">Tritanopia, dificuldade com azul e amarelo</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="grupo-recurso" id="grupo-voz">
+          <legend>Ouvir a página</legend>
+          <div class="campo">
+            <label for="velocidade-voz">Velocidade da voz</label>
+            <select id="velocidade-voz">
+              <option value="0.75">Devagar</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.25">Rápida</option>
+              <option value="1.5">Muito rápida</option>
+            </select>
+          </div>
+          <div class="botoes controles-voz">
+            <button type="button" class="botao botao-pequeno" data-acao="ouvir">Ouvir</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="pausar">Pausar</button>
+            <button type="button" class="botao botao-secundario botao-pequeno" data-acao="parar">Parar</button>
+          </div>
+          <p>Lê o texto selecionado ou, se nada estiver selecionado, o conteúdo principal da página.</p>
+          <p id="estado-voz" role="status"></p>
+        </fieldset>
+      </div>
+      <p class="controles-voz espaco-topo">
+        <button type="button" class="botao botao-secundario botao-pequeno" data-acao="restaurar">Restaurar configurações padrão</button>
+        <button type="button" class="botao botao-pequeno" data-acao="fechar-painel">Fechar painel</button>
+        <a href="acessibilidade.html">Saiba como usar os recursos</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="cabecalho">
+    <div class="recipiente">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="currentColor"/><path d="M24 9c6 6 9 11 9 16a9 9 0 0 1-18 0c0-5 3-10 9-16z" fill="#FFF7FA"/><path d="M24 18v18M24 27c3-1 5-3 6-6M24 30c-3-1-5-3-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <span class="marca-nome">Bela Essência<span class="marca-sub">Cosméticos</span></span>
+        <span class="visualmente-oculto">, página inicial</span>
+      </a>
+      <form class="form-busca" role="search" action="produtos.html" method="get" aria-label="Buscar produtos">
+        <div class="campo">
+          <label for="campo-busca">Buscar produtos <span class="tecla" aria-hidden="true">3</span></label>
+          <input type="search" id="campo-busca" name="busca" maxlength="60" autocomplete="off" placeholder="Ex.: batom, perfume">
+        </div>
+        <button type="submit" class="botao">Buscar</button>
+      </form>
+      <a class="link-carrinho" href="carrinho.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Carrinho <span class="contador-carrinho">0</span><span class="visualmente-oculto rotulo-itens"> itens</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="menu-principal" id="menu-principal" aria-label="Menu principal" tabindex="-1">
+    <div class="recipiente">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Todos os produtos</a></li>
+        <li><a href="produtos.html?categoria=maquiagem">Maquiagem</a></li>
+        <li><a href="produtos.html?categoria=pele">Pele</a></li>
+        <li><a href="produtos.html?categoria=cabelos">Cabelos</a></li>
+        <li><a href="produtos.html?categoria=perfumes">Perfumes</a></li>
+        <li><a href="produtos.html?categoria=corpo">Corpo e banho</a></li>
+        <li><a href="acessibilidade.html" aria-current="page">Acessibilidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <div class="recipiente">
+    <nav class="trilha" aria-label="Você está aqui">
+      <ol>
+        <li><a href="index.html">Início</a></li>
+        <li><span aria-current="page">Acessibilidade</span></li>
+      </ol>
+    </nav>
+
+    <h1>Acessibilidade</h1>
+    <p>Este site foi feito para que pessoas cegas, com baixa visão ou com daltonismo comprem com autonomia. Ele segue as Diretrizes de Acessibilidade para Conteúdo Web, a WCAG 2.2 nível AA, o Modelo de Acessibilidade em Governo Eletrônico, o eMAG, e a Lei Brasileira de Inclusão, a Lei 13.146 de 2015.</p>
+
+    <h2>Atalhos de teclado</h2>
+    <p>No Chrome e no Edge, use a tecla Alt com o número. No Firefox, use Alt e Shift com o número. No Safari, use Control e Option com o número.</p>
+    <div class="tabela-rolagem">
+      <table>
+        <caption>Atalhos disponíveis em todas as páginas</caption>
+        <thead><tr><th scope="col">Atalho</th><th scope="col">O que faz</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>Alt</kbd> + <kbd>1</kbd></td><td>Vai para o conteúdo principal</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>2</kbd></td><td>Vai para o menu principal</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>3</kbd></td><td>Vai para o campo de busca</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>4</kbd></td><td>Vai para o rodapé</td></tr>
+          <tr><td><kbd>Tab</kbd></td><td>Avança para o próximo link, botão ou campo</td></tr>
+          <tr><td><kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Volta para o item anterior</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Fecha o painel de recursos de acessibilidade</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Com leitor de tela, use também a tecla <kbd>H</kbd> para pular entre títulos e a tecla <kbd>D</kbd>, no NVDA, para pular entre regiões da página.</p>
+
+    <h2>Recursos da barra de acessibilidade</h2>
+    <p>No topo de todas as páginas há botões para aumentar e diminuir a letra e ativar o alto contraste. O botão Mais recursos de acessibilidade abre um painel com:</p>
+    <ul>
+      <li>tamanho da letra de 100% a 200%, sem quebrar a página;</li>
+      <li>temas claro, escuro e alto contraste com fundo preto;</li>
+      <li>paletas de cores para protanopia, deuteranopia e tritanopia;</li>
+      <li>espaçamento maior entre linhas, letras e palavras;</li>
+      <li>fonte de leitura facilitada, útil também para dislexia;</li>
+      <li>leitura da página em voz alta, com controle de velocidade, para quem tem baixa visão e não usa leitor de tela.</li>
+    </ul>
+    <p>As escolhas ficam guardadas no seu navegador e são aplicadas sozinhas na próxima visita. Se o seu sistema já estiver em modo escuro ou alto contraste, o site acompanha automaticamente.</p>
+
+    <h2>Como as informações dos produtos estão organizadas</h2>
+    <ul>
+      <li>Cada produto tem a descrição da embalagem pelo toque: formato, tampa, relevos e como abrir.</li>
+      <li>Informamos se a embalagem tem Braille. Quando não tem, enviamos etiqueta em Braille gratuita.</li>
+      <li>Preços antigos e descontos são lidos com as palavras preço anterior e preço atual.</li>
+      <li>Ao adicionar um produto, o leitor de tela avisa quantos itens há no carrinho, sem tirar você do lugar.</li>
+      <li>Nenhuma informação depende só de cor ou de imagem.</li>
+    </ul>
+
+    <h2>Compatibilidade testada</h2>
+    <div class="tabela-rolagem">
+      <table>
+        <caption>Leitores de tela e navegadores</caption>
+        <thead><tr><th scope="col">Leitor de tela</th><th scope="col">Sistema</th><th scope="col">Navegador recomendado</th></tr></thead>
+        <tbody>
+          <tr><td>NVDA</td><td>Windows</td><td>Firefox ou Chrome</td></tr>
+          <tr><td>JAWS</td><td>Windows</td><td>Chrome ou Edge</td></tr>
+          <tr><td>VoiceOver</td><td>macOS e iOS</td><td>Safari</td></tr>
+          <tr><td>TalkBack</td><td>Android</td><td>Chrome</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Encontrou alguma barreira?</h2>
+    <p>Se alguma parte do site estiver difícil de usar, conte pra gente pelo <a href="contato.html">formulário de contato</a>, escolhendo o assunto Problema de acessibilidade no site, ou pelo telefone <a href="tel:+554130000000">(41) 3000-0000</a>. Respondemos em até dois dias úteis.</p>
+
+  </div>
+</main>
+
+<footer class="rodape" id="rodape" tabindex="-1">
+  <div class="recipiente">
+    <section aria-labelledby="rodape-loja">
+      <h2 id="rodape-loja">Bela Essência Cosméticos</h2>
+      <p>Beleza para todas, com produtos identificados em Braille e descritos para quem não enxerga.</p>
+    </section>
+    <section aria-labelledby="rodape-atendimento">
+      <h2 id="rodape-atendimento">Atendimento</h2>
+      <p>De segunda a sexta, das 9h às 18h.</p>
+      <p>Telefone e WhatsApp: <a href="tel:+554130000000">(41) 3000-0000</a></p>
+      <p>E-mail: <a href="mailto:contato@belaessencia.com.br">contato@belaessencia.com.br</a></p>
+    </section>
+    <nav aria-labelledby="rodape-links">
+      <h2 id="rodape-links">Links úteis</h2>
+      <ul>
+        <li><a href="acessibilidade.html">Acessibilidade e atalhos</a></li>
+        <li><a href="mapa-do-site.html">Mapa do site</a></li>
+        <li><a href="privacidade.html">Política de privacidade</a></li>
+        <li><a href="contato.html">Fale conosco</a></li>
+      </ul>
+    </nav>
+    <p class="rodape-final">Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
+  </div>
+</footer>
+<div id="aviso-educado" class="visualmente-oculto" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="aviso-urgente" class="visualmente-oculto" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+</body>
+</html>
