@@ -1,5 +1,7 @@
 /*
  * Catálogo da Bela Essência Cosméticos.
+ * As fotos vêm do Unsplash (licença livre, uso comercial permitido).
+ * Se a foto não carregar, o site usa a ilustração própria em imagemReserva.
  * Cada produto traz, além dos dados comerciais, a descrição da embalagem
  * pelo toque, para que a cliente cega saiba como reconhecer o item em casa.
  */
@@ -30,8 +32,9 @@ window.BE.produtos = [
     comoUsar: "Gire a base no sentido horário até o batom aparecer. Comece pelo centro do lábio inferior e espalhe para os cantos. Repita no lábio superior.",
     braille: true,
     selos: ["Vegano", "Livre de crueldade animal"],
-    imagem: "img/produtos/batom-cremoso-rose.svg",
-    alt: "Batom aberto em tubo dourado, com a ponta rosa queimado e a tampa deitada ao lado.",
+    imagem: "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/batom-cremoso-rose.svg",
+    alt: "Batom rosa nude aberto, em tubo escuro, com a tampa deitada ao lado, sobre fundo branco.",
     forma: "batom", corImagem: "#B5566E"
   },
   {
@@ -47,8 +50,9 @@ window.BE.produtos = [
     comoUsar: "Aplique com os lábios secos. Para um contorno mais preciso, apoie o cotovelo na mesa e use o dedo mínimo como apoio no queixo.",
     braille: true,
     selos: ["Vegano"],
-    imagem: "img/produtos/batom-matte-vermelho.svg",
-    alt: "Batom aberto em tubo dourado, com a ponta vermelha intensa e a tampa deitada ao lado.",
+    imagem: "https://images.unsplash.com/photo-1626895872564-b691b6877b83?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/batom-matte-vermelho.svg",
+    alt: "Batom vermelho aberto, em tubo dourado, sobre fundo vermelho.",
     forma: "batom", corImagem: "#A3162F"
   },
   {
@@ -64,8 +68,9 @@ window.BE.produtos = [
     comoUsar: "Olhe para baixo, encoste a escova na raiz dos cílios superiores e puxe para cima girando de leve. Uma ou duas camadas bastam.",
     braille: true,
     selos: ["Oftalmologicamente testada"],
-    imagem: "img/produtos/mascara-cilios-volume.svg",
-    alt: "Frasco fino e preto de máscara de cílios, com tampa dourada, e a escova apoiada ao lado.",
+    imagem: "https://images.unsplash.com/photo-1631214540553-ff044a3ff1d4?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/mascara-cilios-volume.svg",
+    alt: "Máscara de cílios preta com detalhe dourado e a escova ao lado, sobre fundo rosa.",
     forma: "rimel", corImagem: "#2B2B2B"
   },
   {
@@ -81,8 +86,9 @@ window.BE.produtos = [
     comoUsar: "Coloque uma gota no dorso da mão e aplique com os dedos ou com esponja úmida, do centro do rosto para fora.",
     braille: true,
     selos: ["Livre de óleo", "Dermatologicamente testada"],
-    imagem: "img/produtos/base-liquida-natural.svg",
-    alt: "Frasco quadrado de vidro com bomba dosadora e líquido cor de pele.",
+    imagem: "https://images.unsplash.com/photo-1623143445418-40c192fa3d11?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/base-liquida-natural.svg",
+    alt: "Frasco fosco de base líquida com válvula dosadora, sobre fundo laranja.",
     forma: "frasco", corImagem: "#C99A7A"
   },
   {
@@ -98,8 +104,9 @@ window.BE.produtos = [
     comoUsar: "Pela manhã, com a pele limpa, aplique quatro gotas no rosto e espalhe com as pontas dos dedos. Depois use protetor solar.",
     braille: true,
     selos: ["Vegano", "Dermatologicamente testado"],
-    imagem: "img/produtos/serum-vitamina-c.svg",
-    alt: "Frasco âmbar de sérum com conta-gotas de tampa preta.",
+    imagem: "https://images.unsplash.com/photo-1713768704571-6aeb0d0e5105?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/serum-vitamina-c.svg",
+    alt: "Frasco âmbar de sérum com conta-gotas preto, sobre fundo laranja.",
     forma: "contagotas", corImagem: "#D9822B"
   },
   {
@@ -114,8 +121,9 @@ window.BE.produtos = [
     comoUsar: "Retire uma porção do tamanho de uma ervilha e espalhe pelo rosto e pescoço com movimentos para cima.",
     braille: true,
     selos: ["Livre de perfume", "Hipoalergênico"],
-    imagem: "img/produtos/hidratante-facial-acido-hialuronico.svg",
-    alt: "Pote branco largo com tampa rosa serrilhada.",
+    imagem: "https://images.unsplash.com/photo-1763503839418-2b45c3d7a3c3?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/hidratante-facial-acido-hialuronico.svg",
+    alt: "Pote aberto de creme branco, com a tampa logo acima, sobre uma pedra.",
     forma: "pote", corImagem: "#E9A9BD"
   },
   {
@@ -130,8 +138,9 @@ window.BE.produtos = [
     comoUsar: "Aplique o equivalente a dois dedos de produto no rosto, 15 minutos antes de sair ao sol. Reaplique a cada duas horas.",
     braille: true,
     selos: ["Livre de óleo"],
-    imagem: "img/produtos/protetor-solar-fps50.svg",
-    alt: "Bisnaga amarela clara de protetor solar com tampa branca.",
+    imagem: "https://images.unsplash.com/photo-1689163642429-279f59082ab5?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/protetor-solar-fps50.svg",
+    alt: "Mão segurando uma bisnaga branca de protetor solar, com o mar ao fundo.",
     forma: "bisnaga", corImagem: "#F2C14E"
   },
   {
@@ -146,8 +155,9 @@ window.BE.produtos = [
     comoUsar: "Molhe um algodão, apoie sobre o olho fechado por alguns segundos e deslize para fora. Repita no rosto todo.",
     braille: false,
     selos: ["Hipoalergênico"],
-    imagem: "img/produtos/agua-micelar.svg",
-    alt: "Frasco alto azul claro com tampa dourada e rótulo branco.",
+    imagem: "https://images.unsplash.com/photo-1724085339140-531fe39625f7?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/agua-micelar.svg",
+    alt: "Frasco transparente com líquido verde-água, entre folhas, sobre fundo branco.",
     forma: "frasco-alto", corImagem: "#9CC9E8"
   },
   {
@@ -162,8 +172,9 @@ window.BE.produtos = [
     comoUsar: "Aplique no couro cabeludo molhado, massageie com as pontas dos dedos e enxágue bem.",
     braille: true,
     selos: ["Sem sulfato", "Vegano"],
-    imagem: "img/produtos/shampoo-reconstrucao.svg",
-    alt: "Frasco vinho de shampoo com tampa dourada e rótulo branco.",
+    imagem: "https://images.unsplash.com/photo-1655892810227-c0cffe1d9717?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/shampoo-reconstrucao.svg",
+    alt: "Frasco branco de shampoo com válvula dosadora, encostado em uma parede clara.",
     forma: "frasco-alto", corImagem: "#7A2348"
   },
   {
@@ -178,8 +189,9 @@ window.BE.produtos = [
     comoUsar: "Depois do shampoo, aplique do comprimento às pontas, deixe agir por três minutos e enxágue.",
     braille: true,
     selos: ["Vegano"],
-    imagem: "img/produtos/condicionador-reconstrucao.svg",
-    alt: "Frasco rosa de condicionador com tampa dourada e rótulo branco.",
+    imagem: "https://images.unsplash.com/photo-1655892817271-c66841c2506e?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/condicionador-reconstrucao.svg",
+    alt: "Frasco branco de condicionador com válvula dosadora, ao lado de uma planta.",
     forma: "frasco-alto", corImagem: "#C2557E"
   },
   {
@@ -194,8 +206,9 @@ window.BE.produtos = [
     comoUsar: "Aplique de duas a três borrifadas nas pontas, com o cabelo úmido ou seco.",
     braille: false,
     selos: ["Vegano"],
-    imagem: "img/produtos/oleo-capilar-argan.svg",
-    alt: "Frasco de vidro dourado com conta-gotas preto e rótulo claro.",
+    imagem: "https://images.unsplash.com/photo-1741896135512-084b251887f7?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/oleo-capilar-argan.svg",
+    alt: "Frasco de vidro com óleo dourado e o conta-gotas ao lado, sobre fundo rosa claro.",
     forma: "contagotas", corImagem: "#C8952C"
   },
   {
@@ -211,8 +224,9 @@ window.BE.produtos = [
     comoUsar: "Borrife a cerca de um palmo de distância nos pulsos, atrás das orelhas e no pescoço. Não esfregue os pulsos.",
     braille: true,
     selos: ["Vegano"],
-    imagem: "img/produtos/perfume-flor-de-laranjeira.svg",
-    alt: "Frasco de perfume de vidro grosso com líquido laranja claro e tampa dourada.",
+    imagem: "https://images.unsplash.com/photo-1705899844877-81bb0a0665c1?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/perfume-flor-de-laranjeira.svg",
+    alt: "Frasco de perfume transparente com rótulo branco, deitado entre pedras.",
     forma: "perfume", corImagem: "#F0A35E"
   },
   {
@@ -227,8 +241,9 @@ window.BE.produtos = [
     comoUsar: "Duas borrifadas bastam. Aplique na pele hidratada para durar mais.",
     braille: true,
     selos: [],
-    imagem: "img/produtos/perfume-noite-de-ambar.svg",
-    alt: "Frasco de perfume de vidro grosso com líquido âmbar escuro e tampa dourada.",
+    imagem: "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/perfume-noite-de-ambar.svg",
+    alt: "Frasco de perfume de vidro com líquido dourado e dois pequenos potes ao lado.",
     forma: "perfume", corImagem: "#8A3B12"
   },
   {
@@ -243,8 +258,9 @@ window.BE.produtos = [
     comoUsar: "Borrife no corpo todo depois do banho, a cerca de um palmo de distância.",
     braille: false,
     selos: ["Vegano"],
-    imagem: "img/produtos/body-splash-frutas-vermelhas.svg",
-    alt: "Frasco alto rosa avermelhado de body splash com tampa dourada.",
+    imagem: "https://images.unsplash.com/photo-1572566202186-611ceb4042f0?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/body-splash-frutas-vermelhas.svg",
+    alt: "Frasco de vidro fosco com spray prateado, ao lado de flores rosadas.",
     forma: "frasco-alto", corImagem: "#D6456B"
   },
   {
@@ -259,8 +275,9 @@ window.BE.produtos = [
     comoUsar: "Aplique no corpo após o banho, com a pele ainda levemente úmida.",
     braille: true,
     selos: ["Vegano"],
-    imagem: "img/produtos/hidratante-corporal-karite.svg",
-    alt: "Frasco de vidro com loção cor creme, válvula dosadora preta e rótulo branco.",
+    imagem: "https://images.unsplash.com/photo-1700709678035-b6606373aa52?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/hidratante-corporal-karite.svg",
+    alt: "Frasco âmbar de loção com válvula dosadora, sobre um pedestal de pedra.",
     forma: "frasco", corImagem: "#E8D5B5"
   },
   {
@@ -275,8 +292,9 @@ window.BE.produtos = [
     comoUsar: "Use com bucha ou com as mãos durante o banho e enxágue.",
     braille: false,
     selos: ["Vegano", "Biodegradável"],
-    imagem: "img/produtos/sabonete-liquido-lavanda.svg",
-    alt: "Frasco lilás de sabonete líquido com tampa dourada e rótulo branco.",
+    imagem: "https://images.unsplash.com/photo-1574670700790-fa314ab37787?w=600&h=600&fit=crop&auto=format&q=75",
+    imagemReserva: "img/produtos/sabonete-liquido-lavanda.svg",
+    alt: "Frasco de vidro âmbar com tampa preta e rótulo oval claro.",
     forma: "frasco-alto", corImagem: "#9C7BC8"
   }
 ];

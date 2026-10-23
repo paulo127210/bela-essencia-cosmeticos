@@ -46,6 +46,7 @@ Problemas encontrados e corrigidos durante os testes:
 | Ler ao passar o mouse: título, preço, imagem, botão e campo | Aprovado. Exemplos falados: "Título: Beleza que você reconhece pelo toque", "Imagem: Frasco âmbar de sérum com conta-gotas de tampa preta.", "Botão: Adicionar ao carrinho: Sérum Vitamina C 10%", "Campo: Buscar produtos. Vazio." |
 | Ler ao passar o mouse: leitura do item focado pelo Tab | Aprovado |
 | Ler ao passar o mouse: preferência mantida ao recarregar | Aprovado |
+| Foto indisponível: troca automática pela ilustração local | Aprovado (teste feito com o servidor de fotos bloqueado) |
 | Erros de JavaScript no console | Nenhum |
 | Bloqueios da política de segurança (CSP) | Nenhum causado pelo site |
 

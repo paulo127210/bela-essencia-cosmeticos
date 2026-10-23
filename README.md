@@ -23,6 +23,10 @@ O site é uma loja de demonstração com fins educacionais. O catálogo, o carri
 
 Os detalhes estão em [docs/ACESSIBILIDADE.md](docs/ACESSIBILIDADE.md) e o resultado dos testes em [docs/RELATORIO-TESTES.md](docs/RELATORIO-TESTES.md).
 
+## Créditos das fotos
+
+As fotos dos produtos são do Unsplash e seguem a licença Unsplash, que permite uso gratuito, inclusive comercial, sem necessidade de autorização.
+
 ## Tecnologias
 
 HTML5 semântico, CSS3 e JavaScript puro, sem frameworks e sem etapa de compilação. A hospedagem é estática na Vercel.
@@ -48,7 +52,7 @@ bela-essencia/
 ├── js/loja.js             Carrinho, vitrine, catálogo e página de produto
 ├── js/formularios.js      Validação dos formulários e busca de CEP
 ├── fontes/                Fontes Atkinson Hyperlegible e Lexend (woff2)
-├── img/                   Ilustrações SVG
+├── img/                   Ilustrações SVG (usadas como reserva das fotos)
 ├── vercel.json            Cabeçalhos de segurança da hospedagem
 ├── docs/                  Documentação do projeto
 └── ferramentas/           Geradores de páginas e imagens e testes automáticos
@@ -78,13 +82,13 @@ As páginas HTML são geradas pelo script `ferramentas/gerar_paginas.py`, que ma
 python ferramentas/gerar_paginas.py
 ```
 
-Para incluir ou alterar produtos, edite `js/produtos.js`. Depois rode o gerador de ilustrações:
+Para incluir ou alterar produtos, edite `js/produtos.js`. A foto de cada produto fica no campo `imagem` e deve vir de um banco de imagens de uso livre, como o Unsplash, sem marca de outra empresa aparecendo. Nunca use fotos de sites de outras lojas ou fabricantes. O campo `imagemReserva` aponta para a ilustração local, gerada com:
 
 ```
 python ferramentas/gerar_imagens.py
 ```
 
-Cada produto precisa ter, obrigatoriamente, o texto alternativo da imagem (`alt`) e a descrição da embalagem pelo toque (`embalagem`).
+Cada produto precisa ter, obrigatoriamente, o texto alternativo que descreve a foto (`alt`) e a descrição da embalagem pelo toque (`embalagem`).
 
 ## Como testar
 
@@ -102,7 +106,7 @@ O repositório está ligado à Vercel. Cada envio (push) para a branch `main` ge
 
 ## Segurança
 
-- Política de segurança de conteúdo que só permite scripts, estilos e fontes do próprio site.
+- Política de segurança de conteúdo que só permite scripts, estilos e fontes do próprio site, e imagens do próprio site e do Unsplash.
 - Todo conteúdo dinâmico é criado com `textContent`, nunca com `innerHTML`, o que evita injeção de código.
 - Campos com tamanho máximo e validação no navegador.
 - Nenhum número de cartão ou CPF é solicitado.
@@ -112,6 +116,7 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: produtos passam a usar fotos reais do Unsplash (licença livre, sem marcas visíveis), com as ilustrações próprias como reserva caso a foto não carregue.
 - 23/10/2026: novas imagens dos produtos, com aparência de foto de estúdio e rótulo da marca, e textos alternativos atualizados.
 - 23/10/2026: incluída a opção Ler ao passar o mouse, que lê em voz alta o item sob o mouse ou focado pelo Tab.
 - 23/10/2026: primeira versão da loja, com catálogo, carrinho, fechamento do pedido, barra de acessibilidade, documentação e testes automáticos.

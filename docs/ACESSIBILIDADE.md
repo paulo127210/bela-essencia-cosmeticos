@@ -69,7 +69,7 @@ Pessoas cegas não usam o mouse. Elas navegam pelo teclado ou pelo toque com um 
 
 ## Imagens
 
-Cada produto tem texto alternativo que descreve a aparência da embalagem, como "Frasco âmbar de sérum com conta-gotas de tampa preta". No carrinho, a miniatura tem `alt=""`, porque o nome do produto já está ao lado. A ilustração da página inicial é decorativa.
+Cada produto tem uma foto real e um texto alternativo que descreve o que a foto mostra, como "Frasco âmbar de sérum com conta-gotas preto, sobre fundo laranja". Se a foto não carregar, o site troca sozinho pela ilustração local do produto, mantendo o mesmo texto alternativo. No carrinho, a miniatura tem `alt=""`, porque o nome do produto já está ao lado. A ilustração da página inicial é decorativa.
 
 Além do texto alternativo, cada produto tem o campo "Como reconhecer a embalagem pelo toque", que é o diferencial da loja para quem não enxerga.
 

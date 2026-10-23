@@ -181,7 +181,7 @@ RODAPE = """
         <li><a href="contato.html">Fale conosco</a></li>
       </ul>
     </nav>
-    <p class="rodape-final">Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
+    <p class="rodape-final">Fotos dos produtos: Unsplash, licença livre. Loja de demonstração criada para fins educacionais. Nenhuma compra é cobrada de verdade. Site desenvolvido seguindo a WCAG 2.2 nível AA e o eMAG.</p>
   </div>
 </footer>
 <div id="aviso-educado" class="visualmente-oculto" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -653,7 +653,7 @@ pagina(
     <p>O carrinho e as suas escolhas de acessibilidade ficam guardados no armazenamento local do seu próprio navegador. Eles não são enviados para nós. Você pode apagar tudo limpando os dados do site no navegador. O site não usa cookies de rastreamento nem ferramentas de publicidade.</p>
 
     <h2>Serviços de terceiros</h2>
-    <p>Ao usar o botão Buscar endereço pelo CEP, apenas o número do CEP é enviado ao serviço público ViaCEP para encontrar o endereço. As fontes de letra ficam hospedadas no próprio site, sem consulta a outros servidores.</p>
+    <p>Ao usar o botão Buscar endereço pelo CEP, apenas o número do CEP é enviado ao serviço público ViaCEP para encontrar o endereço. As fontes de letra ficam hospedadas no próprio site. As fotos dos produtos são carregadas do Unsplash, um banco de imagens de uso livre; ao exibi-las, o seu navegador se conecta a esse serviço, que recebe apenas os dados técnicos de qualquer acesso, como o endereço IP. Nenhum dado de formulário é enviado a ele.</p>
 
     <h2>Seus direitos</h2>
     <p>Você pode pedir a qualquer momento para ver, corrigir ou apagar os seus dados, além de retirar a autorização dada. Basta escrever para <a href="mailto:privacidade@belaessencia.com.br">privacidade@belaessencia.com.br</a>.</p>

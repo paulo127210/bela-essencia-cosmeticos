@@ -33,6 +33,15 @@
   };
   var el = BE.el;
 
+  /* Foto do produto; se o servidor de fotos falhar, usa a ilustração local. */
+  function foto(p, atributos) {
+    var img = el("img", Object.assign({ src: p.imagem, alt: p.alt }, atributos));
+    img.addEventListener("error", function () {
+      if (p.imagemReserva && img.getAttribute("src") !== p.imagemReserva) { img.src = p.imagemReserva; }
+    });
+    return img;
+  }
+
   function oculto(texto) { return el("span", { classe: "visualmente-oculto", texto: texto }); }
 
   function semAcento(texto) {
@@ -128,7 +137,7 @@
     var link = el("a", { href: "produto.html?id=" + encodeURIComponent(p.id), texto: p.nome });
     var titulo = el(nivelTitulo || "h2", { id: idTitulo }, link);
     return el("li", null, el("article", { classe: "cartao-produto", "aria-labelledby": idTitulo }, [
-      el("img", { classe: "foto-produto", src: p.imagem, alt: p.alt, width: "400", height: "400", loading: "lazy" }),
+      foto(p, { classe: "foto-produto", width: "600", height: "600", loading: "lazy" }),
       el("div", { classe: "cartao-corpo" }, [
         el("p", { classe: "etiqueta-categoria", texto: BE.categorias[p.categoria] }),
         titulo,
@@ -286,7 +295,7 @@
 
     area.textContent = "";
     area.appendChild(el("div", { classe: "produto-detalhe" }, [
-      el("div", null, el("img", { classe: "foto-produto", src: p.imagem, alt: p.alt, width: "400", height: "400" })),
+      el("div", null, foto(p, { classe: "foto-produto", width: "600", height: "600" })),
       el("div", { classe: "produto-info" }, [
         el("p", { classe: "etiqueta-categoria", texto: BE.categorias[p.categoria] }),
         el("h1", { tabindex: "-1", texto: p.nome }),
@@ -363,7 +372,7 @@
           titulo.focus();
         });
         lista.appendChild(el("li", { classe: "item-carrinho" }, [
-          el("img", { src: p.imagem, alt: "", width: "96", height: "96" }),
+          foto(p, { alt: "", width: "96", height: "96", loading: "lazy" }),
           el("div", null, [
             el("h2", null, el("a", { href: "produto.html?id=" + encodeURIComponent(p.id), texto: p.nome })),
             el("p", { texto: "Preço unitário: " + BE.formatarPreco(p.preco) }),
