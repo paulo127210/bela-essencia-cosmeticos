@@ -8,6 +8,8 @@ import pathlib
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 LOJA = "Bela Essência Cosméticos"
+# Mude a versão a cada publicação: obriga o navegador a baixar CSS e JS novos.
+VERSAO = "2026-10-23-3"
 
 LOGO = (
     '<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">'
@@ -207,7 +209,7 @@ def trilha(itens):
 
 def pagina(arquivo, titulo, descricao, chave, menu, corpo, trilha_itens=None, scripts=None):
     base = '\n<base href="/">' if arquivo == "404.html" else ""
-    extra = "".join(f'\n<script src="js/{s}" defer></script>' for s in (scripts or []))
+    extra = "".join(f'\n<script src="js/{s}?v={VERSAO}" defer></script>' for s in (scripts or []))
     html = f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -218,11 +220,11 @@ def pagina(arquivo, titulo, descricao, chave, menu, corpo, trilha_itens=None, sc
 <meta name="theme-color" content="#4E1440">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fontes/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/estilo.css">
-<script src="js/preferencias.js"></script>
-<script src="js/acessibilidade.js" defer></script>
-<script src="js/produtos.js" defer></script>
-<script src="js/loja.js" defer></script>{extra}
+<link rel="stylesheet" href="css/estilo.css?v={VERSAO}">
+<script src="js/preferencias.js?v={VERSAO}"></script>
+<script src="js/acessibilidade.js?v={VERSAO}" defer></script>
+<script src="js/produtos.js?v={VERSAO}" defer></script>
+<script src="js/loja.js?v={VERSAO}" defer></script>{extra}
 </head>
 <body data-pagina="{chave}">
 {cabecalho(menu)}

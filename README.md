@@ -82,6 +82,8 @@ As páginas HTML são geradas pelo script `ferramentas/gerar_paginas.py`, que ma
 python ferramentas/gerar_paginas.py
 ```
 
+Antes de cada publicação, mude o valor de `VERSAO` no início desse script. Isso obriga os navegadores a baixarem o CSS e o JavaScript novos.
+
 Para incluir ou alterar produtos, edite `js/produtos.js`. A foto de cada produto fica no campo `imagem` e deve vir de um banco de imagens de uso livre, como o Unsplash, sem marca de outra empresa aparecendo. Nunca use fotos de sites de outras lojas ou fabricantes. O campo `imagemReserva` aponta para a ilustração local, gerada com:
 
 ```
@@ -116,6 +118,7 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: CSS e JavaScript passam a ter número de versão no endereço, o que garante que todos vejam a versão nova.
 - 23/10/2026: arquivos de estilo, script e imagem deixam de ficar presos no cache do navegador, então cada publicação aparece na hora.
 - 23/10/2026: produtos passam a usar fotos reais do Unsplash (licença livre, sem marcas visíveis), com as ilustrações próprias como reserva caso a foto não carregue.
 - 23/10/2026: novas imagens dos produtos, com aparência de foto de estúdio e rótulo da marca, e textos alternativos atualizados.
