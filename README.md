@@ -116,6 +116,7 @@ Em uma versão com servidor real, toda validação feita no navegador precisa se
 
 ## Histórico de alterações
 
+- 23/10/2026: arquivos de estilo, script e imagem deixam de ficar presos no cache do navegador, então cada publicação aparece na hora.
 - 23/10/2026: produtos passam a usar fotos reais do Unsplash (licença livre, sem marcas visíveis), com as ilustrações próprias como reserva caso a foto não carregue.
 - 23/10/2026: novas imagens dos produtos, com aparência de foto de estúdio e rótulo da marca, e textos alternativos atualizados.
 - 23/10/2026: incluída a opção Ler ao passar o mouse, que lê em voz alta o item sob o mouse ou focado pelo Tab.
